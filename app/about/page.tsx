@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About DueSphere | Enterprise Audit Platform",
     description: "Learn about DueSphere, the professional audit and compliance platform.",
-    url: "https://duessphere.vercel.app/about",
+    url: "https://due-sphere-limited.vercel.app/about",
     siteName: "DueSphere",
     locale: "en_US",
     type: "website",
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     title: "About DueSphere | Enterprise Audit Platform",
     description: "Learn about DueSphere, the professional audit and compliance platform.",
   },
+  alternates: {
+    canonical: "https://due-sphere-limited.vercel.app/about"
+  }
 }
 
 export default async function AboutPage() {

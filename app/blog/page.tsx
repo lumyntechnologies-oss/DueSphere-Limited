@@ -40,17 +40,18 @@ export default function BlogPage() {
 
   return (
     <>
-      <Head>
+       <Head>
         <title>DueSphere Blog | Audit Insights & Compliance</title>
         <meta name="description" content="Read expert insights on security audits, compliance frameworks, and industry best practices from the DueSphere team." />
         <meta name="keywords" content="DueSphere, audit blog, security insights, compliance, best practices" />
         <meta property="og:title" content="DueSphere Blog | Audit Insights & Compliance" />
         <meta property="og:description" content="Expert insights on security audits, compliance frameworks, and industry best practices." />
+        <meta property="og:url" content="https://due-sphere-limited.vercel.app/blog" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="DueSphere Blog | Audit Insights & Compliance" />
         <meta name="twitter:description" content="Expert insights on security audits, compliance frameworks, and industry best practices." />
-        <link rel="canonical" href="/blog" />
+        <link rel="canonical" href="https://due-sphere-limited.vercel.app/blog" />
       </Head>
       <div className={styles.blogPage}>
         <section className={styles.hero}>

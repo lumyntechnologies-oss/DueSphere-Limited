@@ -63,7 +63,7 @@ export default function MembershipPage() {
 
   return (
     <>
-      <Head>
+       <Head>
         <title>Join DueSphere | DueSphere Membership</title>
         <meta
           name="description"
@@ -75,7 +75,7 @@ export default function MembershipPage() {
           property="og:description"
           content="Join DueSphere. Connect with fellow members and access exclusive events and opportunities."
         />
-        <meta property="og:url" content="https://duessphere.vercel.app/membership" />
+        <meta property="og:url" content="https://due-sphere-limited.vercel.app/membership" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Join DueSphere | DueSphere Membership" />
@@ -83,7 +83,7 @@ export default function MembershipPage() {
           name="twitter:description"
           content="Join DueSphere. Connect with fellow members and access exclusive events and opportunities."
         />
-        <link rel="canonical" href="https://duessphere.vercel.app/membership" />
+        <link rel="canonical" href="https://due-sphere-limited.vercel.app/membership" />
       </Head>
       <div className={styles.membershipPage}>
         <section className={styles.hero}>

@@ -3,20 +3,41 @@ import styles from "./services.module.css"
 
 export const metadata: Metadata = {
   title: "Audit Services | DueSphere",
-  description: "Comprehensive security, compliance, performance, and code quality audits designed for enterprise organizations.",
+  description: "Comprehensive security, compliance, performance, and code quality audits designed for enterprise organizations. Get actionable insights and professional reporting.",
   keywords: [
-    "security audit",
+    "security audit services",
     "compliance audit",
     "performance audit",
     "code quality audit",
-    "enterprise audit services"
+    "enterprise audit services",
+    "SOC 2 compliance",
+    "HIPAA audit",
+    "GDPR compliance",
+    "ISO 27001",
+    "vulnerability assessment"
   ],
   openGraph: {
     title: "Audit Services | DueSphere",
-    description: "Comprehensive security, compliance, performance, and code quality audits.",
-    url: "https://duessphere.vercel.app/services",
+    description: "Comprehensive security, compliance, performance, and code quality audits designed for enterprise organizations.",
+    url: "https://due-sphere-limited.vercel.app/services",
     type: "website",
+    images: [
+      {
+        url: "/og-services.jpg",
+        width: 1200,
+        height: 630,
+        alt: "DueSphere Audit Services"
+      }
+    ]
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Audit Services | DueSphere",
+    description: "Comprehensive security, compliance, performance, and code quality audits designed for enterprise organizations.",
+  },
+  alternates: {
+    canonical: "https://due-sphere-limited.vercel.app/services"
+  }
 }
 
 export default function ServicesPage() {

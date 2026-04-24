@@ -49,27 +49,27 @@ export default function EventsPage() {
 
   return (
     <>
-      <Head>
+       <Head>
         <title>DueSphere Events | Professional Audit & Compliance Services</title>
-<meta
-  name="description"
-  content="Join DueSphere for professional audit workshops, compliance training, and industry networking events."
-/>
-<meta name="keywords" content="DueSphere, audit workshops, compliance training, audit events, professional development, networking" />
-<meta property="og:title" content="DueSphere Events | Professional Audit & Compliance Services" />
-<meta
-  property="og:description"
-  content="Join DueSphere for professional audit workshops, compliance training, and industry networking events."
-/>
-<meta property="og:url" content="https://duessphere.vercel.app/events" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="DueSphere Events | Professional Audit & Compliance Services" />
-<meta
-  name="twitter:description"
-  content="Join DueSphere for professional audit workshops, compliance training, and industry networking events."
-/>
-<link rel="canonical" href="https://duessphere.vercel.app/events" />
+        <meta
+          name="description"
+          content="Join DueSphere for professional audit workshops, compliance training, and industry networking events."
+        />
+        <meta name="keywords" content="DueSphere, audit workshops, compliance training, audit events, professional development, networking" />
+        <meta property="og:title" content="DueSphere Events | Professional Audit & Compliance Services" />
+        <meta
+          property="og:description"
+          content="Join DueSphere for professional audit workshops, compliance training, and industry networking events."
+        />
+        <meta property="og:url" content="https://due-sphere-limited.vercel.app/events" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="DueSphere Events | Professional Audit & Compliance Services" />
+        <meta
+          name="twitter:description"
+          content="Join DueSphere for professional audit workshops, compliance training, and industry networking events."
+        />
+        <link rel="canonical" href="https://due-sphere-limited.vercel.app/events" />
       </Head>
       <div className={styles.eventsPage}>
         <section className={styles.hero}>

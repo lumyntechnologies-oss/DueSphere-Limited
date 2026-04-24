@@ -53,7 +53,7 @@ export default function GalleryPage() {
           property="og:description"
           content="Explore our photo gallery capturing moments and memories from the DueSphere community."
         />
-        <meta property="og:url" content="https://duessphere.vercel.app/gallery" />
+        <meta property="og:url" content="https://due-sphere-limited.vercel.app/gallery" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="DueSphere Gallery | Community Moments" />
@@ -61,7 +61,7 @@ export default function GalleryPage() {
           name="twitter:description"
           content="Explore our photo gallery capturing moments and memories from the DueSphere community."
         />
-        <link rel="canonical" href="https://duessphere.vercel.app/gallery" />
+        <link rel="canonical" href="https://due-sphere-limited.vercel.app/gallery" />
       </Head>
       <div className={styles.galleryPage}>
         <section className={styles.hero}>

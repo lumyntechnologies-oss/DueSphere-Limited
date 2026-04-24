@@ -51,11 +51,11 @@ export default function NewsletterPage() {
           property="og:description"
           content="Subscribe to DueSphere Insights for industry trends, audit best practices, compliance updates, and security insights."
         />
-        <meta property="og:url" content="https://duessphere.vercel.app/newsletter" />
+        <meta property="og:url" content="https://due-sphere-limited.vercel.app/newsletter" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="DueSphere Insights Newsletter" />
-        <link rel="canonical" href="https://duessphere.vercel.app/newsletter" />
+        <link rel="canonical" href="https://due-sphere-limited.vercel.app/newsletter" />
       </Head>
       <div className={styles.container}>
         <div className={styles.content}>

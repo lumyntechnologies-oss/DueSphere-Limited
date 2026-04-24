@@ -55,7 +55,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <Head>
+       <Head>
         <title>Request an Audit | DueSphere - Professional Audit Services</title>
         <meta
           name="description"
@@ -67,7 +67,7 @@ export default function ContactPage() {
           property="og:description"
           content="Request a comprehensive security, compliance, or performance audit from DueSphere. Get started with your audit today."
         />
-        <meta property="og:url" content="https://duessphere.vercel.app/contact" />
+        <meta property="og:url" content="https://due-sphere-limited.vercel.app/contact" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Request an Audit | DueSphere" />
@@ -75,7 +75,7 @@ export default function ContactPage() {
           name="twitter:description"
           content="Request a comprehensive security, compliance, or performance audit from DueSphere. Get started with your audit today."
         />
-        <link rel="canonical" href="https://duessphere.vercel.app/contact" />
+        <link rel="canonical" href="https://due-sphere-limited.vercel.app/contact" />
       </Head>
       <div className={styles.contactPage}>
         <section className={styles.hero}>
