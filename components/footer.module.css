@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(to bottom, #001540, #000a20);
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
   color: white;
   padding: 80px 20px 40px 20px;
 }
@@ -25,13 +25,13 @@
   font-size: 1.75rem;
   font-weight: 800;
   margin: 0 0 16px 0;
-  color: #ffd700;
+  color: #fbbf24;
 }
 
 .footerText {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .footerLink:hover {
-  color: #ffd700;
+  color: #fbbf24;
   transform: translateX(4px);
 }
 
@@ -70,7 +70,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +82,7 @@
 }
 
 .socialLink:hover {
-  background: #d32f2f;
+  background: #f59e0b;
   transform: translateY(-4px);
 }
 
@@ -102,7 +102,7 @@
 }
 
 .legalLink:hover {
-  color: #ffd700;
+  color: #fbbf24;
 }
 
 .separator {
@@ -118,7 +118,7 @@
 
 .copyright {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.55);
   margin: 0;
 }
 
@@ -131,3 +131,4 @@
     min-width: 100%;
   }
 }
+

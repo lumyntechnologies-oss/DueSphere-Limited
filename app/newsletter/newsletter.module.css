@@ -1,7 +1,7 @@
 .container {
   min-height: calc(100vh - 80px);
   padding: 60px 20px;
-  background: linear-gradient(135deg, #034694 0%, #001f3f 100%);
+  background: linear-gradient(135deg, #059669 0%, #0f172a 100%);
 }
 
 .content {
@@ -9,37 +9,38 @@
   margin: 0 auto;
   background: white;
   padding: 60px 40px;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid #f1f5f9;
 }
 
 .title {
   font-size: 2.5rem;
-  font-weight: 700;
-  color: #034694;
+  font-weight: 800;
+  color: #059669;
   margin-bottom: 16px;
   text-align: center;
 }
 
 .subtitle {
   font-size: 1.125rem;
-  color: #666;
+  color: #64748b;
   text-align: center;
   margin-bottom: 40px;
   line-height: 1.6;
 }
 
 .benefits {
-  background: #f8f9fa;
+  background: #f8fafc;
   padding: 30px;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 40px;
 }
 
 .benefitsTitle {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: #034694;
+  font-weight: 700;
+  color: #059669;
   margin-bottom: 16px;
 }
 
@@ -53,7 +54,7 @@
   padding: 12px 0;
   padding-left: 28px;
   position: relative;
-  color: #333;
+  color: #475569;
   line-height: 1.6;
 }
 
@@ -61,7 +62,7 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: #dc2626;
+  color: #059669;
   font-weight: 700;
   font-size: 1.25rem;
 }
@@ -79,7 +80,7 @@
 .input {
   flex: 1;
   padding: 16px 20px;
-  border: 2px solid #ddd;
+  border: 2px solid #e2e8f0;
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s;
@@ -87,17 +88,17 @@
 
 .input:focus {
   outline: none;
-  border-color: #034694;
+  border-color: #059669;
 }
 
 .input:disabled {
-  background: #f5f5f5;
+  background: #f1f5f9;
   cursor: not-allowed;
 }
 
 .button {
   padding: 16px 32px;
-  background: #dc2626;
+  background: #f59e0b;
   color: white;
   border: none;
   border-radius: 8px;
@@ -109,7 +110,7 @@
 }
 
 .button:hover:not(:disabled) {
-  background: #b91c1c;
+  background: #d97706;
   transform: translateY(-2px);
 }
 
@@ -139,7 +140,7 @@
 
 .privacy {
   font-size: 0.875rem;
-  color: #666;
+  color: #64748b;
   text-align: center;
   line-height: 1.6;
 }
@@ -161,3 +162,4 @@
     width: 100%;
   }
 }
+

@@ -1,6 +1,6 @@
 .articlePage {
   width: 100%;
-  background: #f5f5f5;
+  background: #f8fafc;
   padding: 40px 20px 80px 20px;
 }
 
@@ -12,8 +12,8 @@
 .spinner {
   width: 50px;
   height: 50px;
-  border: 4px solid #e0e0e0;
-  border-top-color: #002060;
+  border: 4px solid #e2e8f0;
+  border-top-color: #059669;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 20px auto;
@@ -31,12 +31,13 @@
   background: white;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
 }
 
 .articleHeader {
   padding: 60px 60px 40px 60px;
-  background: linear-gradient(to bottom, #f8f9fa, white);
+  background: linear-gradient(to bottom, #ecfdf5, white);
 }
 
 .articleMeta {
@@ -48,7 +49,7 @@
 
 .category {
   padding: 8px 16px;
-  background: #d32f2f;
+  background: #f59e0b;
   color: white;
   font-size: 0.875rem;
   font-weight: 700;
@@ -58,7 +59,7 @@
 }
 
 .date {
-  color: #999;
+  color: #94a3b8;
   font-size: 0.95rem;
 }
 
@@ -66,13 +67,13 @@
   font-size: 3rem;
   font-weight: 800;
   margin: 0 0 20px 0;
-  color: #002060;
+  color: #0f172a;
   line-height: 1.2;
 }
 
 .author {
   font-size: 1.125rem;
-  color: #666;
+  color: #64748b;
   font-weight: 600;
 }
 
@@ -93,7 +94,7 @@
 .contentInner {
   font-size: 1.125rem;
   line-height: 1.8;
-  color: #333;
+  color: #475569;
 }
 
 .contentInner p {
@@ -104,14 +105,14 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 40px 0 20px 0;
-  color: #002060;
+  color: #0f172a;
 }
 
 .contentInner h3 {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 32px 0 16px 0;
-  color: #002060;
+  color: #0f172a;
 }
 
 .contentInner ul,
@@ -126,12 +127,12 @@
 
 .backButton {
   padding: 40px 60px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #e2e8f0;
 }
 
 .backBtn {
   padding: 14px 32px;
-  background: #002060;
+  background: #059669;
   color: white;
   border: none;
   border-radius: 50px;
@@ -142,7 +143,7 @@
 }
 
 .backBtn:hover {
-  background: #003080;
+  background: #047857;
   transform: translateX(-4px);
 }
 
@@ -171,3 +172,4 @@
     padding: 24px;
   }
 }
+

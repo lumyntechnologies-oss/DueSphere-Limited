@@ -20,7 +20,7 @@
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #666;
+  color: #64748b;
   width: 16px;
   height: 16px;
 }
@@ -28,7 +28,7 @@
 .searchInput {
   width: 100%;
   padding: 10px 40px 10px 36px;
-  border: 2px solid #e1e5e9;
+  border: 2px solid #e2e8f0;
   border-radius: 25px;
   font-size: 14px;
   background: white;
@@ -37,8 +37,8 @@
 
 .searchInput:focus {
   outline: none;
-  border-color: #002060;
-  box-shadow: 0 0 0 3px rgba(0, 32, 96, 0.1);
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
 }
 
 .clearButton {
@@ -57,18 +57,18 @@
 }
 
 .clearButton:hover {
-  background: #f5f5f5;
+  background: #f1f5f9;
 }
 
 .clearIcon {
   width: 14px;
   height: 14px;
-  color: #666;
+  color: #64748b;
 }
 
 .searchSelect {
   padding: 10px 12px;
-  border: 2px solid #e1e5e9;
+  border: 2px solid #e2e8f0;
   border-radius: 8px;
   background: white;
   font-size: 14px;
@@ -78,7 +78,7 @@
 
 .searchSelect:focus {
   outline: none;
-  border-color: #002060;
+  border-color: #059669;
 }
 
 .resultsContainer {
@@ -87,9 +87,9 @@
   left: 0;
   right: 0;
   background: white;
-  border: 1px solid #e1e5e9;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   max-height: 400px;
   overflow-y: auto;
@@ -98,16 +98,16 @@
 
 .resultsHeader {
   padding: 12px 16px;
-  border-bottom: 1px solid #e1e5e9;
+  border-bottom: 1px solid #e2e8f0;
   font-size: 12px;
-  color: #666;
+  color: #64748b;
   font-weight: 600;
 }
 
 .noResults {
   padding: 24px 16px;
   text-align: center;
-  color: #666;
+  color: #64748b;
   font-size: 14px;
 }
 
@@ -119,14 +119,14 @@
 .resultItem {
   display: block;
   padding: 12px 16px;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f1f5f9;
   text-decoration: none;
   color: inherit;
   transition: background-color 0.2s ease;
 }
 
 .resultItem:hover {
-  background: #f8f9fa;
+  background: #f8fafc;
 }
 
 .resultItem:last-child {
@@ -156,37 +156,37 @@
 }
 
 .typenews {
-  background: #e3f2fd;
-  color: #1565c0;
+  background: #d1fae5;
+  color: #047857;
 }
 
 .typeevents {
-  background: #e8f5e8;
-  color: #2e7d32;
+  background: #fef3c7;
+  color: #b45309;
 }
 
 .typeblog {
-  background: #f3e5f5;
-  color: #7b1fa2;
+  background: #ede9fe;
+  color: #7c3aed;
 }
 
 .resultCategory {
   font-size: 11px;
-  color: #666;
+  color: #64748b;
   font-weight: 500;
 }
 
 .resultTitle {
   font-size: 14px;
   font-weight: 600;
-  color: #002060;
+  color: #059669;
   margin: 0;
   line-height: 1.3;
 }
 
 .resultExcerpt {
   font-size: 12px;
-  color: #666;
+  color: #64748b;
   line-height: 1.4;
   margin: 4px 0 0 0;
   display: -webkit-box;
@@ -197,13 +197,13 @@
 
 .resultAuthor {
   font-size: 11px;
-  color: #888;
+  color: #94a3b8;
   margin: 2px 0 0 0;
 }
 
 .resultLocation {
   font-size: 11px;
-  color: #888;
+  color: #94a3b8;
   margin: 2px 0 0 0;
 }
 
@@ -224,3 +224,4 @@
     margin-top: 12px;
   }
 }
+

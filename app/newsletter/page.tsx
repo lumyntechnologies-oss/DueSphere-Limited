@@ -97,7 +97,7 @@ export default function NewsletterPage() {
         </form>
 
         <p className={styles.privacy}>
-          We respect your privacy. Your email will only be used for KESA updates. You can unsubscribe at any time.
+          We respect your privacy. Your email will only be used for DueSphere updates. You can unsubscribe at any time.
         </p>
       </div>
     </div>

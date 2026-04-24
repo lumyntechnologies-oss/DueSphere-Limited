@@ -41,32 +41,32 @@ export default function GalleryPage() {
 
   return (
     <>
-      <Head>
-        <title>KESA Gallery | Kenyan Student Association - University of Minnesota</title>
+       <Head>
+        <title>DueSphere Gallery | DueSphere Community Moments</title>
         <meta
           name="description"
-          content="Explore our photo gallery capturing moments and memories from the Kenyan Student Association community at the University of Minnesota."
+          content="Explore our photo gallery capturing moments and memories from the DueSphere community at the University of Minnesota."
         />
-        <meta name="keywords" content="KESA, Kenyan Student Association, gallery, photos, events, community, University of Minnesota" />
-        <meta property="og:title" content="KESA Gallery | Kenyan Student Association - University of Minnesota" />
+        <meta name="keywords" content="DueSphere, community, gallery, photos, events, University of Minnesota" />
+        <meta property="og:title" content="DueSphere Gallery | Community Moments" />
         <meta
           property="og:description"
-          content="Explore our photo gallery capturing moments and memories from the Kenyan Student Association community at the University of Minnesota."
+          content="Explore our photo gallery capturing moments and memories from the DueSphere community."
         />
-        <meta property="og:url" content="https://kesa-umn.vercel.app/gallery" />
+        <meta property="og:url" content="https://duessphere.vercel.app/gallery" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="KESA Gallery | Kenyan Student Association - University of Minnesota" />
+        <meta name="twitter:title" content="DueSphere Gallery | Community Moments" />
         <meta
           name="twitter:description"
-          content="Explore our photo gallery capturing moments and memories from the Kenyan Student Association community at the University of Minnesota."
+          content="Explore our photo gallery capturing moments and memories from the DueSphere community."
         />
-        <link rel="canonical" href="https://kesa-umn.vercel.app/gallery" />
+        <link rel="canonical" href="https://duessphere.vercel.app/gallery" />
       </Head>
       <div className={styles.galleryPage}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>Photo Gallery</h1>
+            <h1 className={styles.heroTitle}>DueSphere Gallery</h1>
             <p className={styles.heroSubtitle}>Capturing moments and memories from our community</p>
           </div>
         </section>

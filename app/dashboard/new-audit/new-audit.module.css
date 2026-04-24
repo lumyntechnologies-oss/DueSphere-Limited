@@ -63,7 +63,7 @@
 .textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--primary) / 0.1;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
 }
 
 .input:disabled,
@@ -174,3 +174,4 @@
     flex-direction: column;
   }
 }
+

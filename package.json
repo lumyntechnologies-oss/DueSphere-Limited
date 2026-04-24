@@ -1,10 +1,8 @@
 {
-  "name": "kenya-student-association",
+  "name": "duesphere",
   "private": true,
   "scripts": {
     "build": "next build",
-    "prebuild": "node scripts/generate-dynamic-sitemap.js",
-    "postbuild": "next-sitemap",
     "dev": "next dev",
     "lint": "next lint",
     "prisma:generate": "prisma generate",

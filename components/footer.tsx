@@ -50,6 +50,27 @@ export default function Footer() {
           </div>
 
           <div className={styles.footerSection}>
+            <h4 className={styles.footerHeading}>Resources</h4>
+            <nav className={styles.footerLinks}>
+              <Link href="/blog" className={styles.footerLink}>
+                Blog
+              </Link>
+              <Link href="/news" className={styles.footerLink}>
+                News
+              </Link>
+              <Link href="/events" className={styles.footerLink}>
+                Events
+              </Link>
+              <Link href="/gallery" className={styles.footerLink}>
+                Gallery
+              </Link>
+              <Link href="/membership" className={styles.footerLink}>
+                Membership
+              </Link>
+            </nav>
+          </div>
+
+          <div className={styles.footerSection}>
             <h4 className={styles.footerHeading}>Legal</h4>
             <div className={styles.legalLinks}>
               <Link href="/privacy" className={styles.legalLink}>

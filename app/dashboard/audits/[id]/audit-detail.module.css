@@ -59,33 +59,33 @@
 }
 
 .statusBadge.status-pending {
-  background: rgba(255, 193, 7, 0.1);
-  color: #ffc107;
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
 }
 
 .statusBadge.status-in-progress {
-  background: rgba(33, 150, 243, 0.1);
-  color: #2196f3;
+  background: rgba(14, 165, 233, 0.1);
+  color: #0284c7;
 }
 
 .statusBadge.status-completed {
-  background: rgba(76, 175, 80, 0.1);
-  color: #4caf50;
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
 }
 
 .priorityBadge.priority-low {
-  background: rgba(76, 175, 80, 0.1);
-  color: #4caf50;
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
 }
 
 .priorityBadge.priority-medium {
-  background: rgba(255, 193, 7, 0.1);
-  color: #ffc107;
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
 }
 
 .priorityBadge.priority-high {
-  background: rgba(244, 67, 54, 0.1);
-  color: #f44336;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
 }
 
 /* Content Grid */
@@ -250,23 +250,23 @@
 }
 
 .findingSeverity.severity-low {
-  background: rgba(76, 175, 80, 0.1);
-  color: #4caf50;
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
 }
 
 .findingSeverity.severity-medium {
-  background: rgba(255, 193, 7, 0.1);
-  color: #ffc107;
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
 }
 
 .findingSeverity.severity-high {
-  background: rgba(244, 67, 54, 0.1);
-  color: #f44336;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
 }
 
 .findingSeverity.severity-critical {
-  background: rgba(156, 39, 176, 0.1);
-  color: #9c27b0;
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
 }
 
 .findingBody {
@@ -314,18 +314,18 @@
 }
 
 .findingStatus.fstatus-open {
-  background: rgba(244, 67, 54, 0.1);
-  color: #f44336;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
 }
 
 .findingStatus.fstatus-in-progress {
-  background: rgba(33, 150, 243, 0.1);
-  color: #2196f3;
+  background: rgba(14, 165, 233, 0.1);
+  color: #0284c7;
 }
 
 .findingStatus.fstatus-resolved {
-  background: rgba(76, 175, 80, 0.1);
-  color: #4caf50;
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
 }
 
 .emptyReport {
@@ -379,3 +379,4 @@
     flex-direction: column;
   }
 }
+

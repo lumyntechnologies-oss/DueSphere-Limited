@@ -90,32 +90,32 @@ export default function NewsPage() {
   return (
     <>
       <Head>
-        <title>KESA News & Blog | Kenyan Student Association - University of Minnesota</title>
-        <meta
-          name="description"
-          content="Stay informed about KESA events, achievements, community news, and blog posts from the Kenyan Student Association at the University of Minnesota."
-        />
-        <meta name="keywords" content="KESA, Kenyan Student Association, news, blog, events, achievements, community, University of Minnesota" />
-        <meta property="og:title" content="KESA News & Blog | Kenyan Student Association - University of Minnesota" />
-        <meta
-          property="og:description"
-          content="Stay informed about KESA events, achievements, community news, and blog posts from the Kenyan Student Association at the University of Minnesota."
-        />
-        <meta property="og:url" content="https://kesa-umn.vercel.app/news" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="KESA News & Blog | Kenyan Student Association - University of Minnesota" />
-        <meta
-          name="twitter:description"
-          content="Stay informed about KESA events, achievements, community news, and blog posts from the Kenyan Student Association at the University of Minnesota."
-        />
-        <link rel="canonical" href="https://kesa-umn.vercel.app/news" />
+        <title>DueSphere News & Blog | Professional Audit & Compliance Services</title>
+<meta
+  name="description"
+  content="Stay informed about DueSphere news, audit insights, compliance updates, and professional services."
+/>
+<meta name="keywords" content="DueSphere, audit services, compliance, security audit, performance audit, audit reports, professional services" />
+<meta property="og:title" content="DueSphere News & Blog | Professional Audit & Compliance Services" />
+<meta
+  property="og:description"
+  content="Stay informed about DueSphere news, audit insights, compliance updates, and professional services."
+/>
+<meta property="og:url" content="https://duessphere.vercel.app/news" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="DueSphere News & Blog | Professional Audit & Compliance Services" />
+<meta
+  name="twitter:description"
+  content="Stay informed about DueSphere news, audit insights, compliance updates, and professional services."
+/>
+<link rel="canonical" href="https://duessphere.vercel.app/news" />
       </Head>
       <div className={styles.newsPage}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>Latest News & Updates</h1>
-            <p className={styles.heroSubtitle}>Stay informed about KESA events, achievements, community news, and blog posts</p>
+            <p className={styles.heroSubtitle}>Stay informed about audit news, compliance updates, and professional services</p>
           </div>
         </section>
 
@@ -162,7 +162,7 @@ export default function NewsPage() {
           ) : filteredItems.length === 0 ? (
             <div className={styles.emptyState}>
               <h3>No news or blog posts yet</h3>
-              <p>Check back soon for the latest updates from KESA</p>
+              <p>Check back soon for the latest audit insights and news</p>
             </div>
           ) : (
             <div className={styles.newsGrid}>

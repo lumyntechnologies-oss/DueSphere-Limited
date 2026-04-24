@@ -64,35 +64,35 @@ export default function MembershipPage() {
   return (
     <>
       <Head>
-        <title>Join KESA | Kenyan Student Association - University of Minnesota</title>
+        <title>Join DueSphere | DueSphere Membership</title>
         <meta
           name="description"
-          content="Join the Kenyan Student Association at the University of Minnesota. Connect with fellow students and access exclusive events and opportunities."
+          content="Join DueSphere. Connect with fellow members and access exclusive events and opportunities."
         />
-        <meta name="keywords" content="KESA, Kenyan Student Association, membership, join, University of Minnesota, student organization" />
-        <meta property="og:title" content="Join KESA | Kenyan Student Association - University of Minnesota" />
+        <meta name="keywords" content="DueSphere, membership, join, community, student organization" />
+        <meta property="og:title" content="Join DueSphere | DueSphere Membership" />
         <meta
           property="og:description"
-          content="Join the Kenyan Student Association at the University of Minnesota. Connect with fellow students and access exclusive events and opportunities."
+          content="Join DueSphere. Connect with fellow members and access exclusive events and opportunities."
         />
-        <meta property="og:url" content="https://kesa-umn.vercel.app/membership" />
+        <meta property="og:url" content="https://duessphere.vercel.app/membership" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Join KESA | Kenyan Student Association - University of Minnesota" />
+        <meta name="twitter:title" content="Join DueSphere | DueSphere Membership" />
         <meta
           name="twitter:description"
-          content="Join the Kenyan Student Association at the University of Minnesota. Connect with fellow students and access exclusive events and opportunities."
+          content="Join DueSphere. Connect with fellow members and access exclusive events and opportunities."
         />
-        <link rel="canonical" href="https://kesa-umn.vercel.app/membership" />
+        <link rel="canonical" href="https://duessphere.vercel.app/membership" />
       </Head>
       <div className={styles.membershipPage}>
         <section className={styles.hero}>
           <div className={styles.heroPattern}></div>
           <div className={styles.heroContent}>
             <div className={styles.badge}>FREE MEMBERSHIP</div>
-            <h1 className={styles.heroTitle}>Join KESA Today</h1>
+            <h1 className={styles.heroTitle}>Join DueSphere Today</h1>
             <p className={styles.heroSubtitle}>
-              Connect with fellow Kenyan students and become part of a thriving community at the University of Minnesota
+              Connect with fellow members and become part of a thriving community at the University of Minnesota
             </p>
           </div>
         </section>
@@ -100,7 +100,7 @@ export default function MembershipPage() {
       <section className={styles.benefitsSection}>
         <div className={styles.container}>
           <div className={styles.benefitsIntro}>
-            <h2 className={styles.sectionTitle}>Why Join KESA?</h2>
+            <h2 className={styles.sectionTitle}>Why Join DueSphere?</h2>
             <p className={styles.sectionSubtitle}>
               Membership is completely free and opens doors to incredible opportunities
             </p>
@@ -148,7 +148,7 @@ export default function MembershipPage() {
           {status === "success" && (
             <div className={styles.successMessage}>
               <div className={styles.successIcon}>✓</div>
-              <h3>Welcome to KESA!</h3>
+               <h3>Welcome to DueSphere!</h3>
               <p>Your membership application has been received. Check your email for confirmation and next steps.</p>
             </div>
           )}
@@ -306,7 +306,7 @@ export default function MembershipPage() {
                   onChange={handleChange}
                   className={styles.textarea}
                   rows={4}
-                  placeholder="Tell us about your interests and how you'd like to contribute to KESA..."
+                   placeholder="Tell us about your interests and how you'd like to contribute to DueSphere..."
                 />
               </div>
             </div>
@@ -318,12 +318,12 @@ export default function MembershipPage() {
                   Submitting...
                 </>
               ) : (
-                "Join KESA Now →"
+                "Join DueSphere Now →"
               )}
             </button>
 
             <p className={styles.disclaimer}>
-              By submitting this form, you agree to receive communications from KESA about events, news, and
+              By submitting this form, you agree to receive communications from DueSphere about events, news, and
               opportunities.
             </p>
           </form>

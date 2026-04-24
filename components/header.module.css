@@ -4,9 +4,10 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(0, 32, 96, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(5, 150, 105, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .container {
@@ -41,7 +42,7 @@
 .logoSubtext {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #ffd700;
+  color: #fbbf24;
   text-transform: uppercase;
 }
 
@@ -67,12 +68,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #ffd700;
+  background: #fbbf24;
   transition: width 0.3s ease;
 }
 
 .navLink:hover {
-  color: #ffd700;
+  color: #fbbf24;
 }
 
 .navLink:hover::after {
@@ -81,18 +82,18 @@
 
 .joinBtn {
   padding: 12px 28px;
-  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  background: linear-gradient(135deg, #f59e0b, #d97706);
   color: white;
   text-decoration: none;
   font-weight: 700;
   border-radius: 50px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
 }
 
 .joinBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
 }
 
 .menuToggle {
@@ -166,7 +167,7 @@
 
 .signInBtn:hover {
   background: white;
-  color: #002060;
+  color: #059669;
 }
 
 @media (max-width: 968px) {
@@ -179,7 +180,7 @@
     top: 80px;
     left: 0;
     right: 0;
-    background: rgba(0, 32, 96, 0.98);
+    background: rgba(5, 150, 105, 0.98);
     flex-direction: column;
     padding: 40px 20px;
     gap: 24px;
@@ -204,3 +205,4 @@
     margin-top: 16px;
   }
 }
+
