@@ -1,0 +1,35 @@
+#put all gitignore rules here
+# Ignore node_modules
+node_modules/
+# Ignore build output
+dist/
+build/
+# Ignore logslogs/
+*.log
+# Ignore environment variables.env
+# Ignore coverage reportscoverage/
+# Ignore IDE specific files.vscode/
+.idea/
+# Ignore OS generated files.DS_Store
+Thumbs.db
+.DS_Store
+# Ignore temporary files*.tmp
+*.temp
+# Ignore compiled files*.class
+*.class
+# Ignore package-lock.json (if you want to ignore it)package-lock.json
+# Ignore yarn.lock (if you want to ignore it)yarn.lock
+# Ignore .env files (if you want to ignore them).env
+.env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+#ignore coverage reportscoverage/
+coverage/
+#ignore next.js build output.next/
+.next/
+
+
+# clerk configuration (can include secrets)
+/.clerk/

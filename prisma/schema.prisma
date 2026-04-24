@@ -1,0 +1,220 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  excerpt     String
+  content     String
+  category    String
+  image       String
+  author      String
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([publishedAt])
+}
+
+model Blog {
+  id          String   @id @default(cuid())
+  title       String
+  excerpt     String
+  content     String
+  category    String
+  image       String
+  author      String
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([publishedAt])
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  date        DateTime
+  time        String
+  location    String
+  image       String
+  category    String
+  registrationLink String?
+  isStaple    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([date])
+  @@index([category])
+}
+
+model GalleryImage {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  imageUrl    String
+  category    String
+  uploadedAt  DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category])
+  @@index([uploadedAt])
+}
+
+model Member {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String   @unique
+  phone     String?
+  year      String
+  major     String
+  interests String?
+  joinedAt  DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([joinedAt])
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+  read      Boolean  @default(false)
+
+  @@index([createdAt])
+  @@index([read])
+}
+
+model Newsletter {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([createdAt])
+}
+
+model LeadershipTeam {
+  id          String   @id @default(cuid())
+  name        String
+  position    String
+  role        String
+  imageUrl    String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([order])
+}
+
+// DueSphere Audit System Models
+model User {
+  id              String   @id @default(cuid())
+  clerkId         String   @unique
+  email           String   @unique
+  name            String?
+  role            String   @default("client") // "admin" or "client"
+  companyName     String?
+  companySize     String?
+  subscriptionTier String  @default("free") // "free", "pro", "enterprise"
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  auditRequests   AuditRequest[]
+  notifications   Notification[]
+
+  @@index([clerkId])
+  @@index([role])
+}
+
+model AuditRequest {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title           String
+  description     String
+  serviceType     String   // "security", "compliance", "performance", "code-quality"
+  status          String   @default("pending") // "pending", "in-progress", "completed", "cancelled"
+  priority        String   @default("medium") // "low", "medium", "high"
+  requestedDate   DateTime @default(now())
+  startDate       DateTime?
+  completedDate   DateTime?
+  budget          Float?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  auditReport     AuditReport?
+  findings        AuditFinding[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([serviceType])
+  @@index([requestedDate])
+}
+
+model AuditReport {
+  id              String   @id @default(cuid())
+  auditRequestId  String   @unique
+  auditRequest    AuditRequest @relation(fields: [auditRequestId], references: [id], onDelete: Cascade)
+  executiveSummary String?
+  detailedReport  String?
+  overallScore    Int? // 0-100
+  riskLevel       String? // "low", "medium", "high", "critical"
+  recommendations String?
+  generatedAt     DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([auditRequestId])
+}
+
+model AuditFinding {
+  id              String   @id @default(cuid())
+  auditRequestId  String
+  auditRequest    AuditRequest @relation(fields: [auditRequestId], references: [id], onDelete: Cascade)
+  title           String
+  description     String
+  severity        String   // "low", "medium", "high", "critical"
+  category        String   // "security", "performance", "code-quality", "compliance"
+  recommendation  String?
+  status          String   @default("open") // "open", "in-progress", "resolved"
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([auditRequestId])
+  @@index([severity])
+  @@index([status])
+}
+
+model Notification {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type            String   // "audit_created", "audit_updated", "report_ready", "finding_created"
+  title           String
+  message         String
+  read            Boolean  @default(false)
+  auditRequestId  String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([userId])
+  @@index([read])
+  @@index([createdAt])
+}
