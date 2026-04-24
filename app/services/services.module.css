@@ -5,16 +5,28 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #8b5cf6 100%);
   color: white;
   padding: 120px 24px 80px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .heroTitle {
@@ -22,6 +34,7 @@
   font-weight: 800;
   margin: 0 0 16px 0;
   line-height: 1.2;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .heroSubtitle {
@@ -29,6 +42,7 @@
   font-weight: 500;
   margin: 0;
   opacity: 0.95;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .servicesSection {
@@ -42,21 +56,35 @@
 
 .serviceDetail {
   margin-bottom: 80px;
-  padding: 40px;
+  padding: 48px;
   background: var(--card);
-  border-radius: 12px;
-  border-left: 4px solid var(--primary);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  border-left: 4px solid transparent;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.serviceHeader {
-  margin-bottom: 32px;
+.serviceDetail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #059669, #8b5cf6);
+}
+
+.serviceDetail:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(5, 150, 105, 0.12);
 }
 
 .serviceTitle {
   font-size: 2rem;
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 12px 0;
   color: var(--primary);
 }
 
@@ -108,7 +136,7 @@
 
 .processSection {
   padding: 80px 24px;
-  background: linear-gradient(135deg, rgba(5, 150, 105, 0.04) 0%, rgba(245, 158, 11, 0.04) 100%);
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
 }
 
 .sectionTitle {
@@ -117,6 +145,17 @@
   text-align: center;
   margin: 0 0 60px 0;
   color: var(--primary);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #059669, #8b5cf6);
+  margin: 16px auto 0;
+  border-radius: 2px;
 }
 
 .processSteps {
@@ -130,6 +169,15 @@
 .step {
   text-align: center;
   padding: 32px 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(5, 150, 105, 0.12);
 }
 
 .stepNumber {
@@ -139,11 +187,12 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--primary);
+  background: linear-gradient(135deg, #059669, #0d9488);
   color: white;
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 16px;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
 }
 
 .step h3 {
@@ -161,21 +210,33 @@
 
 .ctaSection {
   padding: 80px 24px;
-  background: var(--primary);
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #8b5cf6 100%);
   color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .ctaSection h2 {
   font-size: 2.5rem;
   font-weight: 800;
   margin: 0 0 16px 0;
+  position: relative;
 }
 
 .ctaSection p {
   font-size: 1.1rem;
   margin: 0 0 32px 0;
   opacity: 0.95;
+  position: relative;
 }
 
 .ctaButton {
@@ -188,11 +249,27 @@
   border-radius: 50px;
   transition: all 0.3s ease;
   font-size: 1.05rem;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50px;
+}
+
+.ctaButton:hover::before {
+  opacity: 1;
 }
 
 .ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 768px) {

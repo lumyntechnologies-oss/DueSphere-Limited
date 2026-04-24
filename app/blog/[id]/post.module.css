@@ -50,7 +50,7 @@
 
 .author {
   font-weight: 700;
-  color: #059669;
+  color: var(--primary);
 }
 
 .date {
@@ -63,6 +63,10 @@
   margin: 0 0 24px 0;
   color: #0f172a;
   line-height: 1.2;
+  background: linear-gradient(135deg, #0f172a, #334155);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .tags {
@@ -73,22 +77,34 @@
 
 .tag {
   padding: 8px 16px;
-  background: #f1f5f9;
-  color: #059669;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+  color: #8b5cf6;
   font-size: 0.875rem;
   font-weight: 600;
   border-radius: 20px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+  transform: translateY(-2px);
 }
 
 .imageWrapper {
   position: relative;
   height: 500px;
   width: 100%;
+  overflow: hidden;
 }
 
 .image {
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.03);
 }
 
 .content {

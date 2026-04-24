@@ -3,15 +3,27 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #059669, #047857);
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #8b5cf6 100%);
   padding: 120px 20px 80px 20px;
   text-align: center;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .heroContent {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .heroTitle {
@@ -19,6 +31,7 @@
   font-weight: 800;
   margin: 0 0 20px 0;
   animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .heroSubtitle {
@@ -26,6 +39,7 @@
   margin: 0;
   opacity: 0.95;
   animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes fadeInUp {
@@ -49,9 +63,19 @@
   margin: 0 auto;
 }
 
+.gallerySection {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .filterBar {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 48px;
   justify-content: center;
   flex-wrap: wrap;
@@ -59,27 +83,33 @@
 
 .filterBtn {
   padding: 12px 28px;
-  background: #f8fafc;
-  border: 2px solid transparent;
+  background: white;
+  border: 2px solid #e2e8f0;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   color: #475569;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .filterBtn:hover {
-  background: white;
-  border-color: #059669;
-  color: #059669;
+  border-color: var(--primary);
+  color: var(--primary);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
 }
 
 .filterBtnActive {
-  background: #059669;
+  background: linear-gradient(135deg, #059669, #0d9488);
   color: white;
-  border-color: #059669;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+}
+
+.filterBtn:active {
+  transform: translateY(0);
 }
 
 .loading {
@@ -124,8 +154,228 @@
 
 .galleryGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
+}
+
+.galleryItem {
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+.galleryItem:hover .imageWrapper {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(5, 150, 105, 0.15);
+  border-color: transparent;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.galleryItem:hover .image {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0) 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.galleryItem:hover .overlay {
+  opacity: 1;
+}
+
+.itemTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 4px 0;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover .itemTitle {
+  transform: translateY(0);
+}
+
+.itemCategory {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transform: translateY(10px);
+  transition: transform 0.3s ease 0.05s;
+}
+
+.galleryItem:hover .itemCategory {
+  transform: translateY(0);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 90vh;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.lightboxImageWrapper {
+  position: relative;
+  width: 100%;
+  max-height: 70vh;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.lightboxImage {
+  object-fit: contain;
+}
+
+.lightboxInfo {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightboxTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 16px 0;
+}
+
+.lightboxDescription {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+.lightboxMeta {
+  display: flex;
+  gap: 24px;
+}
+
+.lightboxCategory {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+}
+
+.lightboxDate {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.emptyState h3 {
+  font-size: 1.75rem;
+  color: var(--primary);
+  margin: 0 0 12px 0;
+}
+
+.emptyState p {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin: 0;
 }
 
 .galleryItem {

@@ -3,17 +3,23 @@ import { prisma } from "@/lib/db/prisma"
 
 export async function GET() {
   try {
-    const [memberCount, eventCount, newsCount] = await Promise.all([
-      prisma.member.count(),
-      prisma.event.count(),
-      prisma.news.count(),
+    const [
+      completedAudits,
+      uniqueClients,
+      resolvedFindings,
+      totalAudits
+    ] = await Promise.all([
+      prisma.auditRequest.count({ where: { status: "completed" } }),
+      prisma.user.count({ where: { role: "client" } }),
+      prisma.auditFinding.count({ where: { status: "resolved" } }),
+      prisma.auditRequest.count(),
     ])
 
     return NextResponse.json({
-      members: memberCount,
-      events: eventCount,
-      news: newsCount,
-      yearsActive: 10, // This can be calculated from founding date
+      auditsCompleted: completedAudits,
+      clientsServed: uniqueClients,
+      findingsResolved: resolvedFindings,
+      totalAudits,
     })
   } catch (error) {
     console.error("[v0] Error fetching stats:", error)

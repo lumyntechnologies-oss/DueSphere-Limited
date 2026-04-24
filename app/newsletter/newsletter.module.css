@@ -1,7 +1,20 @@
 .container {
   min-height: calc(100vh - 80px);
   padding: 60px 20px;
-  background: linear-gradient(135deg, #059669 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.2) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .content {
@@ -9,17 +22,23 @@
   margin: 0 auto;
   background: white;
   padding: 60px 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   border: 1px solid #f1f5f9;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #059669;
+  color: var(--primary);
   margin-bottom: 16px;
   text-align: center;
+  background: linear-gradient(135deg, #059669, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
@@ -31,16 +50,17 @@
 }
 
 .benefits {
-  background: #f8fafc;
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.05), rgba(139, 92, 246, 0.05));
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 40px;
+  border: 1px solid rgba(5, 150, 105, 0.1);
 }
 
 .benefitsTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #059669;
+  color: var(--primary);
   margin-bottom: 16px;
 }
 
@@ -51,7 +71,7 @@
 }
 
 .benefitsList li {
-  padding: 12px 0;
+  padding: 10px 0;
   padding-left: 28px;
   position: relative;
   color: #475569;
@@ -62,7 +82,7 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: #059669;
+  color: var(--primary);
   font-weight: 700;
   font-size: 1.25rem;
 }
@@ -83,12 +103,14 @@
   border: 2px solid #e2e8f0;
   border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s;
+  transition: all 0.3s ease;
+  background: white;
 }
 
 .input:focus {
   outline: none;
   border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
 }
 
 .input:disabled {
@@ -98,44 +120,60 @@
 
 .button {
   padding: 16px 32px;
-  background: #f59e0b;
+  background: linear-gradient(135deg, #f59e0b, #f97316);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.button:hover::before {
+  opacity: 1;
 }
 
 .button:hover:not(:disabled) {
-  background: #d97706;
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
 }
 
 .button:disabled {
-  background: #ccc;
+  opacity: 0.6;
   cursor: not-allowed;
   transform: none;
 }
 
 .successMessage {
   padding: 16px;
-  background: #d1fae5;
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
   color: #065f46;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   font-weight: 500;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
 }
 
 .errorMessage {
   padding: 16px;
-  background: #fee2e2;
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
   color: #991b1b;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   font-weight: 500;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
 }
 
 .privacy {
@@ -143,6 +181,7 @@
   color: #64748b;
   text-align: center;
   line-height: 1.6;
+  margin-top: 32px;
 }
 
 @media (max-width: 768px) {

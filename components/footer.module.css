@@ -1,12 +1,26 @@
 .footer {
-  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: white;
   padding: 80px 20px 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #059669, #8b5cf6, #ec4899);
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .footerGrid {
@@ -25,7 +39,11 @@
   font-size: 1.75rem;
   font-weight: 800;
   margin: 0 0 16px 0;
-  color: #fbbf24;
+  color: linear-gradient(135deg, #fbbf24, #f59e0b);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .footerText {
@@ -40,6 +58,19 @@
   font-weight: 700;
   margin: 0 0 20px 0;
   color: white;
+  position: relative;
+  display: inline-block;
+}
+
+.footerHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #059669, #0d9488);
+  border-radius: 2px;
 }
 
 .footerLinks {
@@ -52,13 +83,29 @@
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.95rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
   display: inline-block;
+  position: relative;
+}
+
+.footerLink::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  transition: width 0.3s ease;
+}
+
+.footerLink:hover::after {
+  width: 100%;
 }
 
 .footerLink:hover {
   color: #fbbf24;
-  transform: translateX(4px);
+  transform: translateX(6px);
 }
 
 .socialLinks {
@@ -79,11 +126,14 @@
   font-weight: 700;
   font-size: 0.875rem;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .socialLink:hover {
-  background: #f59e0b;
+  background: linear-gradient(135deg, #059669, #0d9488);
+  border-color: rgba(5, 150, 105, 0.5);
   transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
 }
 
 .legalLinks {
@@ -98,7 +148,7 @@
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-size: 0.875rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .legalLink:hover {

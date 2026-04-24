@@ -5,15 +5,26 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #8b5cf6 100%);
   color: white;
   padding: 100px 24px 60px;
   text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .heroContent {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .heroTitle {
@@ -21,12 +32,13 @@
   font-weight: 800;
   margin: 0 0 20px 0;
   animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .heroSubtitle {
   font-size: 1.25rem;
   margin: 0;
-  opacity: 0.9;
+  opacity: 0.95;
   animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
@@ -77,29 +89,35 @@
 
 .valuesSection {
   padding: 80px 24px;
-  background: linear-gradient(135deg, rgba(5, 150, 105, 0.04) 0%, rgba(245, 158, 11, 0.04) 100%);
-}
-
-.valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 32px;
-  max-width: 1100px;
-  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.04) 0%, rgba(139, 92, 246, 0.04) 100%);
 }
 
 .valueCard {
   background: var(--card);
   padding: 40px 32px;
-  border-radius: 12px;
+  border-radius: 16px;
   text-align: center;
-  border-top: 4px solid var(--primary);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.valueCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #059669, #8b5cf6);
+  border-radius: 16px 16px 0 0;
 }
 
 .valueCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(5, 150, 105, 0.15);
 }
 
 .valueIcon {
@@ -137,14 +155,28 @@
 .serviceCard {
   background: var(--card);
   padding: 40px 32px;
-  border-radius: 12px;
-  border-left: 4px solid var(--primary);
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  border-left: 4px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #059669, #8b5cf6);
 }
 
 .serviceCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(5, 150, 105, 0.15);
 }
 
 .serviceTitle {
@@ -163,7 +195,21 @@
 
 .commitmentSection {
   padding: 80px 24px;
-  background: linear-gradient(135deg, rgba(5, 150, 105, 0.04) 0%, rgba(245, 158, 11, 0.04) 100%);
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
+}
+
+.commitmentIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #059669, #8b5cf6);
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
 }
 
 .commitmentGrid {
@@ -207,21 +253,33 @@
 
 .ctaSection {
   padding: 80px 24px;
-  background: var(--primary);
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #8b5cf6 100%);
   color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .ctaSection h2 {
   font-size: 2.5rem;
   font-weight: 800;
   margin: 0 0 16px 0;
+  position: relative;
 }
 
 .ctaSection p {
   font-size: 1.1rem;
   margin: 0 0 32px 0;
   opacity: 0.95;
+  position: relative;
 }
 
 .ctaButton {
@@ -234,11 +292,27 @@
   border-radius: 50px;
   transition: all 0.3s ease;
   font-size: 1.05rem;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50px;
+}
+
+.ctaButton:hover::before {
+  opacity: 1;
 }
 
 .ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 768px) {

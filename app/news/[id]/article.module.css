@@ -37,7 +37,19 @@
 
 .articleHeader {
   padding: 60px 60px 40px 60px;
-  background: linear-gradient(to bottom, #ecfdf5, white);
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.03), rgba(139, 92, 246, 0.03));
+  position: relative;
+}
+
+.articleHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .articleMeta {
@@ -45,17 +57,20 @@
   gap: 16px;
   align-items: center;
   margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .category {
   padding: 8px 16px;
-  background: #f59e0b;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
   color: white;
   font-size: 0.875rem;
   font-weight: 700;
   border-radius: 20px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
 }
 
 .date {
@@ -66,25 +81,35 @@
 .title {
   font-size: 3rem;
   font-weight: 800;
-  margin: 0 0 20px 0;
+  margin: 0 0 24px 0;
   color: #0f172a;
   line-height: 1.2;
+  position: relative;
+  z-index: 1;
 }
 
 .author {
   font-size: 1.125rem;
   color: #64748b;
   font-weight: 600;
+  position: relative;
+  z-index: 1;
 }
 
 .imageWrapper {
   position: relative;
   height: 500px;
   width: 100%;
+  overflow: hidden;
 }
 
 .image {
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.03);
 }
 
 .content {

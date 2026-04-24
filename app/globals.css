@@ -2,33 +2,54 @@
 @import "tw-animate-css";
 
 :root {
+  /* Modern gradient foundation */
   --background: #f8fafc;
-  --foreground: #1e293b;
+  --foreground: #0f172a;
   --card: #ffffff;
-  --card-foreground: #1e293b;
+  --card-foreground: #0f172a;
   --popover: #ffffff;
-  --popover-foreground: #1e293b;
+  --popover-foreground: #0f172a;
+  
+  /* Primary: Emerald → Cyan gradient */
   --primary: #059669;
   --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #1e293b;
+  --primary-gradient: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+  --primary-glow: rgba(5, 150, 105, 0.4);
+  
+  /* Accent: Violet → Fuchsia gradient */
+  --secondary: #8b5cf6;
+  --secondary-foreground: #ffffff;
+  --secondary-gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  --secondary-glow: rgba(139, 92, 246, 0.4);
+  
+  /* Muted: Slate with warmth */
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
+  
+  /* Highlights: Amber/Orange for CTAs */
   --accent: #f59e0b;
   --accent-foreground: #ffffff;
+  --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+  --accent-glow: rgba(245, 158, 11, 0.4);
+  
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e2e8f0;
   --input: #e2e8f0;
   --ring: #059669;
+  
+  /* Chart colors for data visualization */
   --chart-1: #059669;
-  --chart-2: #f59e0b;
-  --chart-3: #0ea5e9;
-  --chart-4: #8b5cf6;
-  --chart-5: #ec4899;
-  --radius: 0.625rem;
+  --chart-2: #8b5cf6;
+  --chart-3: #0d9488;
+  --chart-4: #ec4899;
+  --chart-5: #f59e0b;
+  
+  --radius: 0.75rem;
+  
+  /* Sidebar */
   --sidebar: #f8fafc;
-  --sidebar-foreground: #1e293b;
+  --sidebar-foreground: #0f172a;
   --sidebar-primary: #059669;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f59e0b;
@@ -39,34 +60,48 @@
 
 .dark {
   --background: #0f172a;
-  --foreground: #f1f5f9;
+  --foreground: #f8fafc;
   --card: #1e293b;
-  --card-foreground: #f1f5f9;
+  --card-foreground: #f8fafc;
   --popover: #1e293b;
-  --popover-foreground: #f1f5f9;
+  --popover-foreground: #f8fafc;
+  
+  /* Primary: Brighter emerald for dark mode */
   --primary: #10b981;
   --primary-foreground: #0f172a;
-  --secondary: #334155;
-  --secondary-foreground: #f1f5f9;
+  --primary-gradient: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+  --primary-glow: rgba(16, 185, 129, 0.5);
+  
+  /* Secondary: Violet/Purple glow */
+  --secondary: #a78bfa;
+  --secondary-foreground: #0f172a;
+  --secondary-gradient: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+  --secondary-glow: rgba(167, 139, 250, 0.5);
+  
   --muted: #334155;
   --muted-foreground: #94a3b8;
-  --accent: #f59e0b;
+  --accent: #fbbf24;
   --accent-foreground: #0f172a;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
+  --accent-gradient: linear-gradient(135deg, #fbbf24 0%, #fb923c 100%);
+  --accent-glow: rgba(251, 191, 36, 0.5);
+  
+  --destructive: #f87171;
+  --destructive-foreground: #0f172a;
   --border: #334155;
   --input: #334155;
   --ring: #10b981;
+  
   --chart-1: #10b981;
-  --chart-2: #f59e0b;
-  --chart-3: #38bdf8;
-  --chart-4: #a78bfa;
-  --chart-5: #f472b6;
+  --chart-2: #a78bfa;
+  --chart-3: #14b8a6;
+  --chart-4: #f472b6;
+  --chart-5: #fbbf24;
+  
   --sidebar: #1e293b;
-  --sidebar-foreground: #f1f5f9;
+  --sidebar-foreground: #f8fafc;
   --sidebar-primary: #10b981;
   --sidebar-primary-foreground: #0f172a;
-  --sidebar-accent: #f59e0b;
+  --sidebar-accent: #fbbf24;
   --sidebar-accent-foreground: #0f172a;
   --sidebar-border: #334155;
   --sidebar-ring: #10b981;
@@ -138,8 +173,6 @@ body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #1e293b;
-  background: #f8fafc;
 }
 
 a {
@@ -164,12 +197,12 @@ html {
 
 /* Selection color */
 ::selection {
-  background: #059669;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
   color: white;
 }
 
 ::-moz-selection {
-  background: #059669;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
   color: white;
 }
 

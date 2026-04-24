@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(5, 150, 105, 0.2) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -35,6 +35,7 @@
   margin: 0 0 16px 0;
   line-height: 1.1;
   animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .heroSubtitle {
@@ -67,16 +68,32 @@
   border-radius: 24px;
   padding: 48px;
   margin-bottom: 32px;
-  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
-  border-left: 4px solid #059669;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+  border-left: 4px solid transparent;
   transform: translateY(50px);
   opacity: 0;
   transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #059669, #8b5cf6);
 }
 
 .sectionCard.visible {
   transform: translateY(0);
   opacity: 1;
+}
+
+.sectionCard:hover {
+  box-shadow: 0 15px 50px rgba(5, 150, 105, 0.1);
 }
 
 .sectionTitle {
@@ -86,6 +103,17 @@
   margin: 0 0 24px 0;
   padding-bottom: 16px;
   border-bottom: 2px solid #f1f5f9;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #059669, #8b5cf6);
 }
 
 .sectionContent {
@@ -96,11 +124,11 @@
   margin-bottom: 24px;
   border-bottom: 1px solid #f1f5f9;
   padding-bottom: 16px;
+  transition: all 0.2s ease;
 }
 
-.faqItem:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
+.faqItem:hover {
+  border-bottom-color: rgba(5, 150, 105, 0.2);
 }
 
 .faqQuestion {
@@ -109,15 +137,11 @@
   color: #0f172a;
   cursor: pointer;
   margin: 0 0 12px 0;
-  transition: color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .faqQuestion:hover {
   color: #059669;
-}
-
-.faqQuestion::marker {
-  display: none;
 }
 
 .faqAnswer {

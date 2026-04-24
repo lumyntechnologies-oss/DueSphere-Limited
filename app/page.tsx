@@ -11,6 +11,17 @@ interface Stats {
   findingsResolved: number
 }
 
+interface NewsItem {
+  id: string
+  title: string
+  content: string
+  excerpt: string
+  image: string
+  author: string
+  createdAt: string
+  category: string
+}
+
 export default function HomePage() {
   const [stats, setStats] = useState<Stats>({
     auditsCompleted: 0,
@@ -18,23 +29,41 @@ export default function HomePage() {
     findingsResolved: 0,
   })
   const [loading, setLoading] = useState(true)
+  const [latestNews, setLatestNews] = useState<NewsItem[]>([])
+  const [newsLoading, setNewsLoading] = useState(true)
 
-  useEffect(() => {
-    async function fetchStats() {
-      try {
-        const res = await fetch("/api/stats")
-        const data = await res.json()
-        setStats(data)
-      } catch (error) {
-        console.error("Failed to fetch stats:", error)
-        setStats({ auditsCompleted: 150, clientsServed: 45, findingsResolved: 820 })
-      } finally {
-        setLoading(false)
-      }
-    }
+   useEffect(() => {
+     async function fetchStats() {
+       try {
+         const res = await fetch("/api/stats")
+         const data = await res.json()
+         setStats(data)
+       } catch (error) {
+         console.error("Failed to fetch stats:", error)
+         setStats({ auditsCompleted: 150, clientsServed: 45, findingsResolved: 820 })
+       } finally {
+         setLoading(false)
+       }
+     }
 
-    fetchStats()
-  }, [])
+     fetchStats()
+   }, [])
+
+   useEffect(() => {
+     async function fetchLatestNews() {
+       try {
+         const res = await fetch("/api/news")
+         const data = await res.json()
+         setLatestNews(data.slice(0, 3))
+       } catch (error) {
+         console.error("Failed to fetch news:", error)
+       } finally {
+         setNewsLoading(false)
+       }
+     }
+
+     fetchLatestNews()
+   }, [])
 
   return (
     <div className={styles.homePage}>
@@ -222,6 +251,59 @@ export default function HomePage() {
                 Receive detailed reports with executive summaries, risk assessments, and prioritized recommendations for immediate action.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest News Section */}
+      <section className={styles.newsSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeaderCenter}>
+            <span className={styles.sectionTag}>Stay Informed</span>
+            <h2 className={styles.sectionTitle}>Latest Service Updates</h2>
+            <p className={styles.sectionSubtitle}>
+              Get the latest news about our audit services, compliance insights, and industry updates.
+            </p>
+          </div>
+
+          {newsLoading ? (
+            <div className={styles.loadingGrid}>
+              <div className={styles.loadingCard}></div>
+              <div className={styles.loadingCard}></div>
+              <div className={styles.loadingCard}></div>
+            </div>
+          ) : (
+            <div className={styles.newsGrid}>
+              {latestNews.map((item) => (
+                <article key={item.id} className={styles.newsCard}>
+                  <div className={styles.newsImageWrapper}>
+                    <Image
+                      src={item.image || "/placeholder.svg?height=200&width=300&query=news"}
+                      alt={item.title}
+                      fill
+                      className={styles.newsImage}
+                    />
+                    <span className={styles.newsCategory}>{item.category}</span>
+                  </div>
+                  <div className={styles.newsContent}>
+                    <div className={styles.newsMeta}>
+                      <span className={styles.newsDate}>{new Date(item.createdAt).toLocaleDateString()}</span>
+                    </div>
+                    <h3 className={styles.newsTitle}>{item.title}</h3>
+                    <p className={styles.newsExcerpt}>{item.excerpt}</p>
+                    <Link href={`/news/${item.id}`} className={styles.newsLink}>
+                      Read More →
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+
+          <div className={styles.sectionFooter}>
+            <Link href="/news" className={styles.viewAllLink}>
+              View All Updates →
+            </Link>
           </div>
         </div>
       </section>

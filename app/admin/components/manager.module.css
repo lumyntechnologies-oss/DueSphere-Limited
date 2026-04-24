@@ -24,18 +24,19 @@
 
 .addBtn {
   padding: 12px 28px;
-  background: linear-gradient(135deg, #059669, #047857);
+  background: linear-gradient(135deg, #059669, #0d9488);
   color: white;
   border: none;
   border-radius: 50px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
 }
 
 .addBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
 }
 
 .loading {
@@ -113,18 +114,20 @@
 
 .saveBtn {
   padding: 14px 32px;
-  background: #059669;
+  background: linear-gradient(135deg, #059669, #0d9488);
   color: white;
   border: none;
   border-radius: 50px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
 }
 
 .saveBtn:hover {
-  background: #047857;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+  background: linear-gradient(135deg, #047857, #065f46);
 }
 
 .cancelBtn {

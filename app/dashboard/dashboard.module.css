@@ -29,18 +29,20 @@
 .newAuditButton {
   display: inline-block;
   padding: 12px 24px;
-  background: var(--primary);
+  background: linear-gradient(135deg, #059669, #0d9488);
   color: white;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
   white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
 }
 
 .newAuditButton:hover {
-  background: var(--accent);
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
 }
 
 /* Stats Grid */
@@ -53,10 +55,17 @@
 
 .statCard {
   padding: 24px;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: white;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.1);
 }
 
 .statValue {
