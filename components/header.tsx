@@ -17,7 +17,7 @@ export default function Header() {
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <span className={styles.logoText}>DueSphere</span>
-          <span className={styles.logoSubtext}>Audit & Compliance</span>
+          <span className={styles.logoSubtext}>BACKGROUND & LEGAL CHECK & DUE-DELIGENCE</span>
         </Link>
 
         <button className={styles.menuToggle} onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">

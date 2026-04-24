@@ -82,7 +82,7 @@ export default function HomePage() {
         <div className={styles.heroContent}>
           <span className={styles.heroTag}>Trusted by Industry Leaders</span>
           <h1 className={styles.heroTitle}>DueSphere</h1>
-          <p className={styles.heroSubtitle}>Enterprise Audit & Compliance Services</p>
+          <p className={styles.heroSubtitle}>Watchlist Screening, Sanctions & Compliance Services</p>
           <p className={styles.heroDescription}>
             Comprehensive security, compliance, and performance audits designed to strengthen your systems and protect your organization.
           </p>
