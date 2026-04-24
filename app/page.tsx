@@ -5,12 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "./page.module.css"
 
-interface Stats {
-  auditsCompleted: number
-  clientsServed: number
-  findingsResolved: number
-}
-
 interface NewsItem {
   id: string
   title: string
@@ -30,34 +24,22 @@ interface Service {
   isActive: boolean
 }
 
+const certifications = [
+  { name: "ISO 27001", icon: "🛡️" },
+  { name: "SOC 2 Type II", icon: "✓" },
+  { name: "GDPR Compliant", icon: "🔒" },
+  { name: "HIPAA Certified", icon: "🏥" },
+  { name: "NIST Aligned", icon: "📊" },
+  { name: "PCI DSS", icon: "💳" },
+  { name: "CISA Registered", icon: "📋" },
+  { name: "ISO 9001", icon: "⭐" },
+]
+
 export default function HomePage() {
-  const [stats, setStats] = useState<Stats>({
-    auditsCompleted: 0,
-    clientsServed: 0,
-    findingsResolved: 0,
-  })
-  const [loading, setLoading] = useState(true)
   const [latestNews, setLatestNews] = useState<NewsItem[]>([])
   const [newsLoading, setNewsLoading] = useState(true)
   const [services, setServices] = useState<Service[]>([])
   const [servicesLoading, setServicesLoading] = useState(true)
-
-   useEffect(() => {
-     async function fetchStats() {
-       try {
-         const res = await fetch("/api/stats")
-         const data = await res.json()
-         setStats(data)
-       } catch (error) {
-         console.error("Failed to fetch stats:", error)
-         setStats({ auditsCompleted: 150, clientsServed: 45, findingsResolved: 820 })
-       } finally {
-         setLoading(false)
-       }
-     }
-
-     fetchStats()
-   }, [])
 
    useEffect(() => {
      async function fetchLatestNews() {
@@ -125,29 +107,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className={styles.statsBar}>
-        <div className={styles.container}>
-          <div className={styles.statsGrid}>
-            <div className={styles.statItem}>
-              <h3 className={styles.statNumber}>{loading ? "..." : stats.auditsCompleted}</h3>
-              <p className={styles.statLabel}>Audits Completed</p>
-            </div>
-            <div className={styles.statDivider}></div>
-            <div className={styles.statItem}>
-              <h3 className={styles.statNumber}>{loading ? "..." : stats.clientsServed}</h3>
-              <p className={styles.statLabel}>Clients Served</p>
-            </div>
-            <div className={styles.statDivider}></div>
-            <div className={styles.statItem}>
-              <h3 className={styles.statNumber}>{loading ? "..." : stats.findingsResolved}</h3>
-              <p className={styles.statLabel}>Findings Resolved</p>
-            </div>
-            <div className={styles.statDivider}></div>
-            <div className={styles.statItem}>
-              <h3 className={styles.statNumber}>99%</h3>
-              <p className={styles.statLabel}>Client Satisfaction</p>
-            </div>
+      {/* Trust Badges Marquee */}
+      <section className={styles.trustBar}>
+        <div className={styles.trustHeader}>
+          <span className={styles.trustLabel}>Trusted Compliance & Certifications</span>
+        </div>
+        <div className={styles.marqueeWrapper}>
+          <div className={styles.marqueeTrack}>
+            {[...certifications, ...certifications, ...certifications].map((cert, i) => (
+              <div key={i} className={styles.marqueeItem}>
+                <span className={styles.marqueeIcon}>{cert.icon}</span>
+                <span className={styles.marqueeName}>{cert.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -335,7 +307,6 @@ export default function HomePage() {
           <span className={styles.ctaTag}>Ready to Get Started?</span>
           <h2 className={styles.ctaTitle}>Secure Your Organization Today</h2>
           <p className={styles.ctaText}>
-   
             Let our experts conduct a comprehensive audit of your systems. Identify vulnerabilities, ensure compliance, and achieve peace of mind.
           </p>
           <Link href="/contact" className={styles.ctaButton}>
