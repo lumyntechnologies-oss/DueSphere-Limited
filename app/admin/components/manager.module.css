@@ -205,6 +205,59 @@
   font-size: 0.75rem;
 }
 
+.cardBadges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Status Badges */
+.statusPending {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.statusInProgress {
+  background: rgba(14, 165, 233, 0.1);
+  color: #0284c7;
+}
+
+.statusCompleted {
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
+}
+
+.statusCancelled {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* Priority Badges */
+.priorityLow {
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
+}
+
+.priorityMedium {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.priorityHigh {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.statusBadge,
+.priorityBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .cardAuthor {
   font-weight: 600;
   color: #059669;

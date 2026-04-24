@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { prisma } from "@/lib/prisma"
 import styles from "./services.module.css"
 
 export const metadata: Metadata = {
@@ -40,7 +41,12 @@ export const metadata: Metadata = {
   }
 }
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const services = await prisma.service.findMany({
+    where: { isActive: true },
+    orderBy: { order: "asc" },
+  })
+
   return (
     <div className={styles.servicesPage}>
       <section className={styles.hero}>
@@ -52,97 +58,37 @@ export default function ServicesPage() {
 
       <section className={styles.servicesSection}>
         <div className={styles.container}>
-          <div className={styles.serviceDetail}>
-            <div className={styles.serviceHeader}>
-              <h2 className={styles.serviceTitle}>🔒 Security Audits</h2>
+          {services.length === 0 ? (
+            <div className={styles.emptyState}>
+              <p>No services available at the moment. Please check back later.</p>
             </div>
-            <div className={styles.serviceContent}>
-              <p>
-                Identify vulnerabilities and strengthen your security posture with our comprehensive security assessments.
-              </p>
-              <h3 className={styles.subsectionTitle}>What We Assess:</h3>
-              <ul className={styles.featureList}>
-                <li>Infrastructure security and network architecture</li>
-                <li>Application security and code vulnerabilities</li>
-                <li>Access control and authentication mechanisms</li>
-                <li>Data protection and encryption practices</li>
-                <li>Threat landscape and exposure analysis</li>
-                <li>Security policies and incident response procedures</li>
-              </ul>
-              <p className={styles.deliverableText}>
-                <strong>Deliverables:</strong> Vulnerability report, risk assessment matrix, prioritized remediation roadmap, and executive summary.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.serviceDetail}>
-            <div className={styles.serviceHeader}>
-              <h2 className={styles.serviceTitle}>✓ Compliance Audits</h2>
-            </div>
-            <div className={styles.serviceContent}>
-              <p>
-                Ensure your organization meets regulatory requirements and industry standards with detailed compliance assessment.
-              </p>
-              <h3 className={styles.subsectionTitle}>What We Assess:</h3>
-              <ul className={styles.featureList}>
-                <li>Regulatory requirements (SOC 2, HIPAA, GDPR, ISO 27001, etc.)</li>
-                <li>Policies, controls, and procedures documentation</li>
-                <li>Data handling and privacy practices</li>
-                <li>Audit trails and logging requirements</li>
-                <li>Employee training and awareness programs</li>
-                <li>Documentation and evidence gathering</li>
-              </ul>
-              <p className={styles.deliverableText}>
-                <strong>Deliverables:</strong> Compliance gap analysis, control mapping, remediation plan, and certification readiness assessment.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.serviceDetail}>
-            <div className={styles.serviceHeader}>
-              <h2 className={styles.serviceTitle}>⚡ Performance Audits</h2>
-            </div>
-            <div className={styles.serviceContent}>
-              <p>
-                Optimize system efficiency and operational effectiveness through comprehensive performance analysis.
-              </p>
-              <h3 className={styles.subsectionTitle}>What We Assess:</h3>
-              <ul className={styles.featureList}>
-                <li>System performance metrics and benchmarks</li>
-                <li>Resource utilization and capacity planning</li>
-                <li>Scalability and bottleneck analysis</li>
-                <li>Infrastructure optimization opportunities</li>
-                <li>Cost efficiency and operational overhead</li>
-                <li>Disaster recovery and business continuity</li>
-              </ul>
-              <p className={styles.deliverableText}>
-                <strong>Deliverables:</strong> Performance report, optimization recommendations, cost-benefit analysis, and implementation timeline.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.serviceDetail}>
-            <div className={styles.serviceHeader}>
-              <h2 className={styles.serviceTitle}>📝 Code Quality Audits</h2>
-            </div>
-            <div className={styles.serviceContent}>
-              <p>
-                Evaluate code quality, maintainability, and adherence to best practices across your software projects.
-              </p>
-              <h3 className={styles.subsectionTitle}>What We Assess:</h3>
-              <ul className={styles.featureList}>
-                <li>Code architecture and design patterns</li>
-                <li>Security vulnerabilities in codebase</li>
-                <li>Code maintainability and technical debt</li>
-                <li>Testing coverage and quality assurance practices</li>
-                <li>Performance and optimization opportunities</li>
-                <li>Compliance with coding standards and best practices</li>
-              </ul>
-              <p className={styles.deliverableText}>
-                <strong>Deliverables:</strong> Code quality report, vulnerability findings, refactoring recommendations, and metrics dashboard.
-              </p>
-            </div>
-          </div>
+          ) : (
+            services.map((service) => (
+              <div key={service.id} className={styles.serviceDetail}>
+                <div className={styles.serviceHeader}>
+                  <h2 className={styles.serviceTitle}>{service.icon} {service.title}</h2>
+                </div>
+                <div className={styles.serviceContent}>
+                  <p>{service.description}</p>
+                  {service.features.length > 0 && (
+                    <>
+                      <h3 className={styles.subsectionTitle}>What We Assess:</h3>
+                      <ul className={styles.featureList}>
+                        {service.features.map((feature, index) => (
+                          <li key={index}>{feature}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                  {service.deliverables.length > 0 && (
+                    <p className={styles.deliverableText}>
+                      <strong>Deliverables:</strong> {service.deliverables.join(", ")}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </section>
 

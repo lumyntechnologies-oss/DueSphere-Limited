@@ -126,6 +126,23 @@ model LeadershipTeam {
   @@index([order])
 }
 
+// DueSphere Content Management Models
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  icon        String   // Icon name or emoji
+  features    String[] // Array of feature descriptions
+  deliverables String[] // Array of deliverable descriptions
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([isActive])
+  @@index([order])
+}
+
 // DueSphere Audit System Models
 model User {
   id              String   @id @default(cuid())

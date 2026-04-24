@@ -22,6 +22,14 @@ interface NewsItem {
   category: string
 }
 
+interface Service {
+  id: string
+  title: string
+  description: string
+  icon: string
+  isActive: boolean
+}
+
 export default function HomePage() {
   const [stats, setStats] = useState<Stats>({
     auditsCompleted: 0,
@@ -31,6 +39,8 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true)
   const [latestNews, setLatestNews] = useState<NewsItem[]>([])
   const [newsLoading, setNewsLoading] = useState(true)
+  const [services, setServices] = useState<Service[]>([])
+  const [servicesLoading, setServicesLoading] = useState(true)
 
    useEffect(() => {
      async function fetchStats() {
@@ -63,6 +73,24 @@ export default function HomePage() {
      }
 
      fetchLatestNews()
+   }, [])
+
+   useEffect(() => {
+     async function fetchServices() {
+       try {
+         const res = await fetch("/api/services")
+         const data = await res.json()
+         if (Array.isArray(data)) {
+           setServices(data.filter((s: Service) => s.isActive))
+         }
+       } catch (error) {
+         console.error("Failed to fetch services:", error)
+       } finally {
+         setServicesLoading(false)
+       }
+     }
+
+     fetchServices()
    }, [])
 
   return (
@@ -175,46 +203,30 @@ export default function HomePage() {
               Tailored audit solutions for every aspect of your organization's security and compliance needs.
             </p>
           </div>
-          <div className={styles.servicesGrid}>
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIconWrapper}>
-                <span className={styles.serviceIcon}>🔒</span>
-              </div>
-              <h3 className={styles.serviceTitle}>Security Audits</h3>
-              <p className={styles.serviceDescription}>
-                Identify vulnerabilities and strengthen your security posture with comprehensive threat assessment and penetration testing.
-              </p>
-              <Link href="/services" className={styles.serviceLink}>
-                Learn More →
-              </Link>
+          {servicesLoading ? (
+            <div className={styles.loadingGrid}>
+              <div className={styles.loadingCard}></div>
+              <div className={styles.loadingCard}></div>
+              <div className={styles.loadingCard}></div>
             </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIconWrapper}>
-                <span className={styles.serviceIcon}>✓</span>
-              </div>
-              <h3 className={styles.serviceTitle}>Compliance Audits</h3>
-              <p className={styles.serviceDescription}>
-                Ensure adherence to regulatory requirements and industry standards with detailed compliance assessment and reporting.
-              </p>
-              <Link href="/services" className={styles.serviceLink}>
-                Learn More →
-              </Link>
+          ) : services.length === 0 ? (
+            <p style={{ textAlign: "center", color: "#64748b", padding: "40px 0" }}>No services available.</p>
+          ) : (
+            <div className={styles.servicesGrid}>
+              {services.map((service) => (
+                <div key={service.id} className={styles.serviceCard}>
+                  <div className={styles.serviceIconWrapper}>
+                    <span className={styles.serviceIcon}>{service.icon}</span>
+                  </div>
+                  <h3 className={styles.serviceTitle}>{service.title}</h3>
+                  <p className={styles.serviceDescription}>{service.description}</p>
+                  <Link href="/services" className={styles.serviceLink}>
+                    Learn More →
+                  </Link>
+                </div>
+              ))}
             </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIconWrapper}>
-                <span className={styles.serviceIcon}>⚡</span>
-              </div>
-              <h3 className={styles.serviceTitle}>Performance Audits</h3>
-              <p className={styles.serviceDescription}>
-                Optimize system performance and efficiency through detailed analysis and actionable recommendations.
-              </p>
-              <Link href="/services" className={styles.serviceLink}>
-                Learn More →
-              </Link>
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
@@ -323,6 +335,7 @@ export default function HomePage() {
           <span className={styles.ctaTag}>Ready to Get Started?</span>
           <h2 className={styles.ctaTitle}>Secure Your Organization Today</h2>
           <p className={styles.ctaText}>
+   
             Let our experts conduct a comprehensive audit of your systems. Identify vulnerabilities, ensure compliance, and achieve peace of mind.
           </p>
           <Link href="/contact" className={styles.ctaButton}>

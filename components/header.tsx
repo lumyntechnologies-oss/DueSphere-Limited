@@ -28,9 +28,9 @@ export default function Header() {
           <Link href="/" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
             Home
           </Link>
-          <a href="/#services" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/services" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
             Services
-          </a>
+          </Link>
           <Link href="/contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
             Request Audit
           </Link>

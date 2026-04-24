@@ -169,7 +169,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       required
                       className={styles.input}
-                      placeholder="John Doe"
+                      placeholder="Joshua Mwendwa"
                     />
                   </div>
 
@@ -186,7 +186,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className={styles.input}
-                        placeholder="john@company.com"
+                        placeholder="josh@company.com"
                       />
                     </div>
 

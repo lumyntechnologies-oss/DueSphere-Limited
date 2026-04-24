@@ -272,6 +272,13 @@
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
+.emptyState {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
 @media (max-width: 768px) {
   .heroTitle {
     font-size: 2.5rem;

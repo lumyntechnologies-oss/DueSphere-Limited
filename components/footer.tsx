@@ -16,15 +16,15 @@ export default function Footer() {
           <div className={styles.footerSection}>
             <h4 className={styles.footerHeading}>Services</h4>
             <nav className={styles.footerLinks}>
-              <a href="/#services" className={styles.footerLink}>
+              <Link href="/services" className={styles.footerLink}>
                 Our Services
-              </a>
+              </Link>
               <Link href="/contact" className={styles.footerLink}>
                 Request Audit
               </Link>
-              <a href="/#why-choose" className={styles.footerLink}>
+              <Link href="/about" className={styles.footerLink}>
                 Why DueSphere
-              </a>
+              </Link>
               <Link href="/faq" className={styles.footerLink}>
                 FAQ
               </Link>

@@ -10,8 +10,10 @@ import GalleryManager from "./components/gallery-manager"
 import MembersManager from "./components/members-manager"
 import ContactsManager from "./components/contacts-manager"
 import LeadershipManager from "./components/leadership-manager"
+import ServiceManager from "./components/service-manager"
+import AuditsManager from "./components/audits-manager"
 
-type Tab = "news" | "blog" | "events" | "gallery" | "members" | "contacts" | "leadership"
+type Tab = "news" | "blog" | "events" | "gallery" | "members" | "contacts" | "leadership" | "services" | "audits"
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState<Tab>("news")
@@ -52,46 +54,67 @@ export default function AdminPage() {
         </div>
         <nav className={styles.nav}>
           <button
+            type="button"
             className={`${styles.navBtn} ${activeTab === "news" ? styles.navBtnActive : ""}`}
             onClick={() => setActiveTab("news")}
           >
             News
           </button>
           <button
+            type="button"
             className={`${styles.navBtn} ${activeTab === "blog" ? styles.navBtnActive : ""}`}
             onClick={() => setActiveTab("blog")}
           >
             Blog
           </button>
           <button
+            type="button"
             className={`${styles.navBtn} ${activeTab === "events" ? styles.navBtnActive : ""}`}
             onClick={() => setActiveTab("events")}
           >
             Events
           </button>
           <button
+            type="button"
             className={`${styles.navBtn} ${activeTab === "gallery" ? styles.navBtnActive : ""}`}
             onClick={() => setActiveTab("gallery")}
           >
             Gallery
           </button>
           <button
+            type="button"
             className={`${styles.navBtn} ${activeTab === "members" ? styles.navBtnActive : ""}`}
             onClick={() => setActiveTab("members")}
           >
             Members
           </button>
           <button
+            type="button"
             className={`${styles.navBtn} ${activeTab === "leadership" ? styles.navBtnActive : ""}`}
             onClick={() => setActiveTab("leadership")}
           >
             Leadership
           </button>
           <button
+            type="button"
             className={`${styles.navBtn} ${activeTab === "contacts" ? styles.navBtnActive : ""}`}
             onClick={() => setActiveTab("contacts")}
           >
             Contact Messages
+          </button>
+          <button
+            type="button"
+            className={`${styles.navBtn} ${activeTab === "services" ? styles.navBtnActive : ""}`}
+            onClick={() => setActiveTab("services")}
+          >
+            Services
+          </button>
+          <button
+            type="button"
+            className={`${styles.navBtn} ${activeTab === "audits" ? styles.navBtnActive : ""}`}
+            onClick={() => setActiveTab("audits")}
+          >
+            Audit Requests
           </button>
           <div className={styles.navSection}>
             <h3 className={styles.navSectionTitle}>GDPR</h3>
@@ -151,6 +174,8 @@ export default function AdminPage() {
         {activeTab === "members" && <MembersManager />}
         {activeTab === "leadership" && <LeadershipManager />}
         {activeTab === "contacts" && <ContactsManager />}
+        {activeTab === "services" && <ServiceManager />}
+        {activeTab === "audits" && <AuditsManager />}
       </div>
     </div>
   )
