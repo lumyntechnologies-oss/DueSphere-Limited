@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
-import { prisma } from '@/lib/db/prisma'
+import { prisma } from '@/lib/prisma'
 
-const siteUrl = 'https://due-sphere-limited.vercel.app'
+const siteUrl = 'https://www.duespherelimited.co.ke'
 
 export async function GET() {
   try {
