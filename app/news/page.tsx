@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import styles from "./news.module.css"
@@ -89,28 +88,7 @@ export default function NewsPage() {
 
   return (
     <>
-       <Head>
-        <title>DueSphere News & Blog | Professional Audit & Compliance Services</title>
-        <meta
-          name="description"
-          content="Stay informed about DueSphere news, audit insights, compliance updates, and professional services."
-        />
-        <meta name="keywords" content="DueSphere, audit services, compliance, security audit, performance audit, audit reports, professional services" />
-        <meta property="og:title" content="DueSphere News & Blog | Professional Audit & Compliance Services" />
-        <meta
-          property="og:description"
-          content="Stay informed about DueSphere news, audit insights, compliance updates, and professional services."
-        />
-        <meta property="og:url" content="https://due-sphere-limited.vercel.app/news" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="DueSphere News & Blog | Professional Audit & Compliance Services" />
-        <meta
-          name="twitter:description"
-          content="Stay informed about DueSphere news, audit insights, compliance updates, and professional services."
-        />
-        <link rel="canonical" href="https://due-sphere-limited.vercel.app/news" />
-      </Head>
+
       <div className={styles.newsPage}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>

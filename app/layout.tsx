@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://due-sphere-limited.vercel.app"),
+  metadataBase: new URL("https://www.duespherelimited.co.ke/"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "DueSphere - Professional Audit & Compliance Services",
     description: "Enterprise-grade security, compliance, and performance audits with comprehensive reporting.",
-    url: "https://due-sphere-limited.vercel.app",
+    url: "https://www.duespherelimited.co.ke/",
     siteName: "DueSphere",
     locale: "en_US",
     type: "website",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE"
+    google: "google-site-verification=duespherelimited-co-ke"
   },
 }
 
@@ -93,12 +93,12 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "DueSphere Limited",
-    "url": "https://due-sphere-limited.vercel.app",
-    "logo": "https://due-sphere-limited.vercel.app/logo.png",
+    "url": "https://www.duespherelimited.co.ke/",
+    "logo": "https://www.duespherelimited.co.ke/logo.png",
     "description": "Enterprise-grade security, compliance, and performance audit services. Comprehensive audits with actionable insights.",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-DUE-SPHERE",
+      "telephone": "+254-700-000-000",
       "contactType": "customer service",
       "email": "info@duesphere.com"
     },

@@ -20,7 +20,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Audit Services | DueSphere",
     description: "Comprehensive security, compliance, performance, and code quality audits designed for enterprise organizations.",
-    url: "https://due-sphere-limited.vercel.app/services",
+    url: "https://www.duespherelimited.co.ke/services",
+    siteName: "DueSphere",
+    locale: "en_KE",
     type: "website",
     images: [
       {
@@ -36,9 +38,13 @@ export const metadata: Metadata = {
     title: "Audit Services | DueSphere",
     description: "Comprehensive security, compliance, performance, and code quality audits designed for enterprise organizations.",
   },
-  alternates: {
-    canonical: "https://due-sphere-limited.vercel.app/services"
-  }
+    alternates: {
+    canonical: "/services",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default async function ServicesPage() {

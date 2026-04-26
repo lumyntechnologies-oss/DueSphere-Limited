@@ -2,7 +2,6 @@
 
 import type React from "react"
 import { useState } from "react"
-import Head from "next/head"
 import styles from "./contact.module.css"
 
 export default function ContactPage() {
@@ -55,28 +54,7 @@ export default function ContactPage() {
 
   return (
     <>
-       <Head>
-        <title>Request an Audit | DueSphere - Professional Audit Services</title>
-        <meta
-          name="description"
-          content="Request a comprehensive security, compliance, or performance audit from DueSphere. Get started with your audit today."
-        />
-        <meta name="keywords" content="audit request, security audit, compliance audit, audit services, DueSphere" />
-        <meta property="og:title" content="Request an Audit | DueSphere" />
-        <meta
-          property="og:description"
-          content="Request a comprehensive security, compliance, or performance audit from DueSphere. Get started with your audit today."
-        />
-        <meta property="og:url" content="https://due-sphere-limited.vercel.app/contact" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Request an Audit | DueSphere" />
-        <meta
-          name="twitter:description"
-          content="Request a comprehensive security, compliance, or performance audit from DueSphere. Get started with your audit today."
-        />
-        <link rel="canonical" href="https://due-sphere-limited.vercel.app/contact" />
-      </Head>
+
       <div className={styles.contactPage}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>
