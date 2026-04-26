@@ -1,5 +1,5 @@
 export async function GET() {
-  const siteUrl = 'https://due-sphere-limited.vercel.app'
+  const siteUrl = 'https://www.duespherelimited.co.ke'
 
   const robotsTxt = `User-agent: *
 Allow: /
