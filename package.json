@@ -12,7 +12,9 @@
     "seed:services": "tsx scripts/seed-services.ts",
     "seed:audits": "tsx scripts/seed-audits.ts",
     "seed:due-diligence": "tsx scripts/seed-due-diligence.ts",
-    "seed:all": "npm run seed:services && npm run seed:audits && npm run seed:due-diligence"
+    "seed:blogs": "tsx scripts/seed-blogs.ts",
+    "seed:news": "tsx scripts/seed-news.ts",
+    "seed:all": "npm run seed:services && npm run seed:audits && npm run seed:due-diligence && npm run seed:blogs && npm run seed:news"
   },
   "dependencies": {
     "@clerk/nextjs": "latest",
