@@ -8,7 +8,11 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "start": "next start"
+    "start": "next start",
+    "seed:services": "tsx scripts/seed-services.ts",
+    "seed:audits": "tsx scripts/seed-audits.ts",
+    "seed:due-diligence": "tsx scripts/seed-due-diligence.ts",
+    "seed:all": "npm run seed:services && npm run seed:audits && npm run seed:due-diligence"
   },
   "dependencies": {
     "@clerk/nextjs": "latest",

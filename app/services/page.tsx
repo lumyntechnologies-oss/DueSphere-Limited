@@ -3,8 +3,8 @@ import { prisma } from "@/lib/prisma"
 import styles from "./services.module.css"
 
 export const metadata: Metadata = {
-  title: "Audit Services | DueSphere",
-  description: "Comprehensive security, compliance, performance, and code quality audits designed for enterprise organizations. Get actionable insights and professional reporting.",
+  title: "Audit & Due Diligence Services | DueSphere",
+  description: "Comprehensive audits and due diligence services including security, compliance, background checks, organization verification for enterprises.",
   keywords: [
     "security audit services",
     "compliance audit",

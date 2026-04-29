@@ -12,8 +12,9 @@ import ContactsManager from "./components/contacts-manager"
 import LeadershipManager from "./components/leadership-manager"
 import ServiceManager from "./components/service-manager"
 import AuditsManager from "./components/audits-manager"
+import DueDiligenceManager from "./components/due-diligence-manager"
 
-type Tab = "news" | "blog" | "events" | "gallery" | "members" | "contacts" | "leadership" | "services" | "audits"
+type Tab = "news" | "blog" | "events" | "gallery" | "members" | "contacts" | "leadership" | "services" | "audits" | "due-diligence"
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState<Tab>("news")
@@ -116,6 +117,13 @@ export default function AdminPage() {
           >
             Audit Requests
           </button>
+          <button
+            type="button"
+            className={`${styles.navBtn} ${activeTab === "due-diligence" ? styles.navBtnActive : ""}`}
+            onClick={() => setActiveTab("due-diligence")}
+          >
+            Due Diligence
+          </button>
           <div className={styles.navSection}>
             <h3 className={styles.navSectionTitle}>GDPR</h3>
             <button
@@ -176,6 +184,7 @@ export default function AdminPage() {
         {activeTab === "contacts" && <ContactsManager />}
         {activeTab === "services" && <ServiceManager />}
         {activeTab === "audits" && <AuditsManager />}
+        {activeTab === "due-diligence" && <DueDiligenceManager />}
       </div>
     </div>
   )

@@ -157,6 +157,7 @@ model User {
   updatedAt       DateTime @updatedAt
 
   auditRequests   AuditRequest[]
+  dueDiligenceRequests DueDiligenceRequest[]
   notifications   Notification[]
 
   @@index([clerkId])
@@ -222,15 +223,103 @@ model AuditFinding {
   @@index([status])
 }
 
+// DueSphere Due Diligence System Models
+model DueDiligenceRequest {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title           String
+  description     String
+  diligenceType   String   // "organization" | "new-hire"
+  status          String   @default("pending") // "pending", "document-review", "background-check", "stakeholder", "analysis", "completed", "cancelled"
+  priority        String   @default("medium")
+  organizationName String?
+  kraPin          String?
+  businessPermit  String?
+  cr12IssueDate   DateTime?
+  directorCount   Int?
+  budget          Float?
+  phase           Int      @default(1) // 1-5 per proposal
+  requestedDate   DateTime @default(now())
+  startDate       DateTime?
+  completedDate   DateTime?
+  documents       Json[]   @default([])
+  riskRating      String?  // "low", "medium", "high" (final)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  diligenceReport DueDiligenceReport?
+  findings        DueDiligenceFinding[]
+  documentUploads DueDiligenceDocument[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([diligenceType])
+  @@index([requestedDate])
+}
+
+model DueDiligenceReport {
+  id                    String   @id @default(cuid())
+  dueDiligenceRequestId String   @unique
+  dueDiligenceRequest   DueDiligenceRequest @relation(fields: [dueDiligenceRequestId], references: [id], onDelete: Cascade)
+  executiveSummary      String?
+  legalCompliance       String?
+  governance            String?
+  sanctionsScreening    String?
+  reputationalRisk      String?
+  recommendations       String[]
+  riskRating            String?  // "low", "medium", "high"
+  generatedAt           DateTime @default(now())
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([dueDiligenceRequestId])
+}
+
+model DueDiligenceFinding {
+  id              String   @id @default(cuid())
+  dueDiligenceRequestId String
+  dueDiligenceRequest   DueDiligenceRequest @relation(fields: [dueDiligenceRequestId], references: [id], onDelete: Cascade)
+  title           String
+  description     String
+  riskLevel       String   // "low", "medium", "high"
+  category        String   // "legal", "governance", "financial", "reputation", "sanctions"
+  evidence        String?
+  recommendation  String?
+  status          String   @default("open") // "open", "mitigated", "accepted"
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([dueDiligenceRequestId])
+  @@index([riskLevel])
+  @@index([status])
+}
+
+model DueDiligenceDocument {
+  id              String   @id @default(cuid())
+  dueDiligenceRequestId String
+  dueDiligenceRequest   DueDiligenceRequest @relation(fields: [dueDiligenceRequestId], references: [id], onDelete: Cascade)
+  filename        String
+  documentType    String   // "KRA_PIN", "Business_Permit", "CR12", "ID_Passport", etc.
+  fileUrl         String
+  verified        Boolean  @default(false)
+  notes           String?
+  uploadedAt      DateTime @default(now())
+
+  @@index([dueDiligenceRequestId])
+  @@index([documentType])
+}
+
 model Notification {
   id              String   @id @default(cuid())
   userId          String
   user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  type            String   // "audit_created", "audit_updated", "report_ready", "finding_created"
+  type            String   // "audit_created", "due_diligence_created", "audit_updated", "report_ready", "finding_created"
   title           String
   message         String
   read            Boolean  @default(false)
   auditRequestId  String?
+  dueDiligenceRequestId String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
