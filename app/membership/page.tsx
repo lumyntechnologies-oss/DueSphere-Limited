@@ -190,7 +190,7 @@ export default function MembershipPage() {
                       onChange={handleChange}
                       required
                       className={styles.input}
-                      placeholder="John"
+                      placeholder="joshua"
                     />
                   </div>
 
@@ -224,7 +224,7 @@ export default function MembershipPage() {
                       onChange={handleChange}
                       required
                       className={styles.input}
-                      placeholder="john.doe@company.com"
+                      placeholder="joshua.lee@company.com"
                     />
                   </div>
 
