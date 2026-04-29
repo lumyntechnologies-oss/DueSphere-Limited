@@ -239,9 +239,7 @@ export default function HomePage() {
             </div>
           </div>
           <div style={{ textAlign: 'center', marginTop: '32px' }}>
-            <Link href="/services#due-diligence" className={styles.serviceLink}>
-              Explore All Due Diligence Services →
-            </Link>
+              <Link href="/due-diligence" className={styles.dueLink}>Explore Due Diligence Services →</Link>
           </div>
         </div>
       </section>

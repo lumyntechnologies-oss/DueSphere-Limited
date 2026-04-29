@@ -196,7 +196,7 @@ export default async function ServicesPage() {
       </section>
 
       {/* Due Diligence Services Section */}
-      <section className={styles.servicesSection} style={{ backgroundColor: '#f8fafc' }}>
+      <section id="due-diligence" className={styles.servicesSection} style={{ backgroundColor: '#f8fafc' }}>
         <div className={styles.container}>
           <div className={styles.sectionHeaderCenter}>
             <span className={styles.sectionTag}>Due Diligence</span>
@@ -207,7 +207,7 @@ export default async function ServicesPage() {
           </div>
           <div className={styles.servicesGrid}>
             {dueDiligenceServices.map((service) => (
-              <div key={service.id} className={styles.serviceCard}>
+              <div key={service.id} id={service.id} className={styles.serviceCard}>
                 <div className={styles.serviceIconWrapper}>
                   <span className={styles.serviceIcon}>{service.icon}</span>
                 </div>
@@ -223,7 +223,7 @@ export default async function ServicesPage() {
                 </div>
                 <div className={styles.serviceActions}>
                   <a href="/contact?type=due-diligence" className={styles.ctaButton}>Request DD</a>
-                  <a href={`#${service.id}`} className={styles.learnMoreLink}>Learn More</a>
+                  <a href="/due-diligence" className={styles.learnMoreLink}>Learn More →</a>
                 </div>
               </div>
             ))}
