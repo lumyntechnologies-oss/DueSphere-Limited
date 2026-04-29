@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import Head from "next/head"
 import Link from "next/link"
@@ -337,6 +335,7 @@ export default function MembershipPage() {
             </form>
           </div>
         </section>
+      </div>
     </>
   )
 }
