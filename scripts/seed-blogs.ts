@@ -23,7 +23,7 @@ Key benefits of regular security audits include:
 
 At DueSphere, our security audit methodology combines automated scanning with expert manual testing to deliver comprehensive coverage and reliable results.`,
       category: "Security",
-      image: "/blog/security-audit.jpg",
+      image: "",
       author: "Dr. Sarah Mwangi",
       publishedAt: new Date("2026-03-15"),
     },
@@ -43,7 +43,7 @@ Achieving SOC 2 compliance requires implementing comprehensive controls across p
 
 Our team at DueSphere guides organizations through the entire SOC 2 journey, from gap analysis to audit readiness, ensuring a smooth and successful certification process.`,
       category: "Compliance",
-      image: "/blog/soc2-compliance.jpg",
+      image: "",
       author: "James Ochieng",
       publishedAt: new Date("2026-03-08"),
     },
@@ -64,7 +64,7 @@ The findings from a performance audit empower your engineering team to make data
 
 DueSphere's performance audit methodology combines synthetic monitoring, real user metrics analysis, and load testing to provide a complete picture of your system's performance characteristics.`,
       category: "Performance",
-      image: "/blog/performance-audit.jpg",
+      image: "",
       author: "Eng. Wanjiku Karanja",
       publishedAt: new Date("2026-02-28"),
     },
@@ -85,7 +85,7 @@ The output is a prioritized roadmap of refactoring opportunities, architectural 
 
 At DueSphere, we use industry-standard tools (SonarQube, ESLint, security scanners) combined with expert human review to deliver actionable insights that your team can immediately act upon.`,
       category: "Code Quality",
-      image: "/blog/code-quality.jpg",
+      image: "",
       author: "Michael Njoroge",
       publishedAt: new Date("2026-02-20"),
     },
@@ -118,7 +118,7 @@ A GDPR-focused audit evaluates your data processing activities against the regul
 
 Our GDPR readiness assessments provide a gap analysis against these requirements, followed by a remediation plan that prioritizes high-risk areas. We help you build a privacy program that stands up to regulatory scrutiny.`,
       category: "Compliance",
-      image: "/blog/gdpr-compliance.jpg",
+      image: "",
       author: "Grace Wambui",
       publishedAt: new Date("2026-02-10"),
     },
@@ -152,7 +152,7 @@ Quantifying the ROI of due diligence involves tracking metrics such as:
 
 At DueSphere, we design due diligence programs that balance thoroughness with efficiency, delivering actionable intelligence without unnecessary overhead. Our reports are structured to support confident decision-making and provide lasting value beyond the initial engagement.`,
       category: "Due Diligence",
-      image: "/blog/due-diligence-roi.jpg",
+      image: "",
       author: "David Mutua",
       publishedAt: new Date("2026-02-01"),
     }

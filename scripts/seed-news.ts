@@ -22,7 +22,7 @@ Backed by our existing audit infrastructure, our due diligence service combines 
 
 **Available now:** Organizations can request due diligence investigations through our client dashboard or by contacting our team directly.`,
       category: "Announcements",
-      image: "/news/due-diligence-launch.jpg",
+      image: "",
       author: "DueSphere Team",
       publishedAt: new Date("2026-03-10"),
     },
@@ -46,7 +46,7 @@ This improvement reduces communication lag and keeps stakeholders informed throu
 
 **How to enable:** Log into your dashboard and navigate to Settings → Notifications to configure your preferences.`,
       category: "Product Updates",
-      image: "/news/notifications.jpg",
+      image: "",
       author: "Product Team",
       publishedAt: new Date("2026-03-05"),
     },
@@ -70,7 +70,7 @@ The certification reflects our commitment to security best practices across:
 
 This milestone reinforces our position as a trusted partner for organizations seeking secure, reliable audit and due diligence services.`,
       category: "Company News",
-      image: "/news/iso-certification.jpg",
+      image: "",
       author: "Operations Team",
       publishedAt: new Date("2026-02-25"),
     }
