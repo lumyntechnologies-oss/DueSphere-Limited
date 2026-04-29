@@ -903,6 +903,82 @@
    }
  }
 
+/* ===== DUE DILIGENCE SECTION ===== */
+.dueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.dueCard {
+  background: white;
+  border-radius: 24px;
+  padding: 40px 32px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.dueCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(139, 92, 246, 0.15);
+  border-color: transparent;
+}
+
+.dueIcon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.dueTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: #0f172a;
+}
+
+.dueDescription {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0 0 24px 0;
+  line-height: 1.7;
+}
+
+.dueLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dueLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  transition: width 0.3s ease;
+}
+
+.dueLink:hover::after {
+  width: 100%;
+}
+
+.dueLink:hover {
+  gap: 12px;
+  color: #7c3aed;
+}
+
 /* ===== CTA SECTION ===== */
 .ctaSection {
   position: relative;
@@ -1090,13 +1166,15 @@
 
   .servicesGrid,
   .whyGrid,
-  .newsGrid {
+  .newsGrid,
+  .dueGrid {
     grid-template-columns: 1fr;
   }
 
   .serviceCard,
   .whyCard,
-  .newsCard {
+  .newsCard,
+  .dueCard {
     padding: 36px 24px;
   }
 

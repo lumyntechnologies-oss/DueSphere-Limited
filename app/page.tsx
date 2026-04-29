@@ -172,7 +172,7 @@ export default function HomePage() {
             <span className={styles.sectionTag}>What We Offer</span>
             <h2 className={styles.sectionTitle}>Our Audit Services</h2>
             <p className={styles.sectionSubtitle}>
-              Tailored audit solutions for every aspect of your organization's security and compliance needs.
+              Comprehensive audit solutions for every aspect of your organization's security and compliance needs.
             </p>
           </div>
           {servicesLoading ? (
@@ -199,6 +199,50 @@ export default function HomePage() {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Due Diligence Section */}
+      <section className={styles.servicesSection} style={{ backgroundColor: '#f8fafc' }}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeaderCenter}>
+            <span className={styles.sectionTag}>Due Diligence</span>
+            <h2 className={styles.sectionTitle}>Background Checks & Organization Verification</h2>
+            <p className={styles.sectionSubtitle}>
+              Thorough investigations for mergers, acquisitions, new hires, and vendor partnerships. Verify corporate standing and mitigate risk.
+            </p>
+          </div>
+          <div className={styles.dueGrid}>
+            <div className={styles.dueCard}>
+              <div className={styles.dueIcon}>🏢</div>
+              <h3 className={styles.dueTitle}>Organization Due Diligence</h3>
+              <p className={styles.dueDescription}>
+               Verify legal standing, ownership, and compliance for mergers, acquisitions, or partnerships. Includes KRA, Business Permit, CR12 verification.
+              </p>
+              <Link href="/contact?type=dd-org" className={styles.dueLink}>Request Organization DD →</Link>
+            </div>
+            <div className={styles.dueCard}>
+              <div className={styles.dueIcon}>👤</div>
+              <h3 className={styles.dueTitle}>New Hire Background Checks</h3>
+              <p className={styles.dueDescription}>
+                Pre-employment screening for executives and key personnel. Identity, education, employment history, sanctions & PEP screening.
+              </p>
+              <Link href="/contact?type=dd-hire" className={styles.dueLink}>Request Background Check →</Link>
+            </div>
+            <div className={styles.dueCard}>
+              <div className={styles.dueIcon}>🔗</div>
+              <h3 className={styles.dueTitle}>Vendor & Third-Party DD</h3>
+              <p className={styles.dueDescription}>
+                Assess vendor risk, financial stability, compliance posture, and supply chain integrity before engagement.
+              </p>
+              <Link href="/contact?type=dd-vendor" className={styles.dueLink}>Request Vendor DD →</Link>
+            </div>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '32px' }}>
+            <Link href="/services#due-diligence" className={styles.serviceLink}>
+              Explore All Due Diligence Services →
+            </Link>
+          </div>
         </div>
       </section>
 
