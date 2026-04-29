@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { useUser } from "@clerk/nextjs"
 import Link from "next/link"
-import styles from "../audits/[id]/audit-detail.module.css" // Reuse audit detail styles
+import styles from "./due-diligence-detail.module.css"
 
 // Import types from lib/db/schema.ts
 import type { DueDiligenceRequest, DueDiligenceReport, DueDiligenceFinding, DueDiligenceDocument } from "@/lib/db/schema"
