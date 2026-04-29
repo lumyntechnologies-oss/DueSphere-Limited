@@ -39,10 +39,12 @@ export default function MembershipPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...formData,
           companyName: formData.company,
+          contactName: `${formData.firstName} ${formData.lastName}`.trim(),
+          email: formData.email,
+          phone: formData.phone || undefined,
           auditType: formData.serviceInterest,
-          description: formData.message,
+          description: formData.message || `Client onboarding inquiry from ${formData.firstName} ${formData.lastName}`,
         }),
       })
 
