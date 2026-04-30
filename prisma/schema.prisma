@@ -94,14 +94,14 @@ model Contact {
   contactName String
   email       String
   phone       String?
-  auditType   String
+  diligenceType String  @default("organization") // "organization", "new-hire"
   description String
   createdAt   DateTime @default(now())
   read        Boolean  @default(false)
 
   @@index([createdAt])
   @@index([read])
-  @@index([auditType])
+  @@index([diligenceType])
 }
 
 model Newsletter {
@@ -143,7 +143,7 @@ model Service {
   @@index([order])
 }
 
-// DueSphere Audit System Models
+// DueSphere User System Model
 model User {
   id              String   @id @default(cuid())
   clerkId         String   @unique
@@ -156,71 +156,11 @@ model User {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  auditRequests   AuditRequest[]
   dueDiligenceRequests DueDiligenceRequest[]
-  notifications   Notification[]
+  notifications       Notification[]
 
   @@index([clerkId])
   @@index([role])
-}
-
-model AuditRequest {
-  id              String   @id @default(cuid())
-  userId          String
-  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  title           String
-  description     String
-  serviceType     String   // "security", "compliance", "performance", "code-quality"
-  status          String   @default("pending") // "pending", "in-progress", "completed", "cancelled"
-  priority        String   @default("medium") // "low", "medium", "high"
-  requestedDate   DateTime @default(now())
-  startDate       DateTime?
-  completedDate   DateTime?
-  budget          Float?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  auditReport     AuditReport?
-  findings        AuditFinding[]
-
-  @@index([userId])
-  @@index([status])
-  @@index([serviceType])
-  @@index([requestedDate])
-}
-
-model AuditReport {
-  id              String   @id @default(cuid())
-  auditRequestId  String   @unique
-  auditRequest    AuditRequest @relation(fields: [auditRequestId], references: [id], onDelete: Cascade)
-  executiveSummary String?
-  detailedReport  String?
-  overallScore    Int? // 0-100
-  riskLevel       String? // "low", "medium", "high", "critical"
-  recommendations String?
-  generatedAt     DateTime @default(now())
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  @@index([auditRequestId])
-}
-
-model AuditFinding {
-  id              String   @id @default(cuid())
-  auditRequestId  String
-  auditRequest    AuditRequest @relation(fields: [auditRequestId], references: [id], onDelete: Cascade)
-  title           String
-  description     String
-  severity        String   // "low", "medium", "high", "critical"
-  category        String   // "security", "performance", "code-quality", "compliance"
-  recommendation  String?
-  status          String   @default("open") // "open", "in-progress", "resolved"
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-
-  @@index([auditRequestId])
-  @@index([severity])
-  @@index([status])
 }
 
 // DueSphere Due Diligence System Models
@@ -314,11 +254,10 @@ model Notification {
   id              String   @id @default(cuid())
   userId          String
   user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  type            String   // "audit_created", "due_diligence_created", "audit_updated", "report_ready", "finding_created"
+  type            String   // "due_diligence_created", "due_diligence_updated", "report_ready", "finding_created"
   title           String
   message         String
   read            Boolean  @default(false)
-  auditRequestId  String?
   dueDiligenceRequestId String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt

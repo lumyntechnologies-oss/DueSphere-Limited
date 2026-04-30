@@ -55,39 +55,7 @@ export interface ContactMessage {
   createdAt: Date
 }
 
-// Audit types (existing)
-export interface AuditRequest {
-  id: string
-  userId: string
-  title: string
-  description: string
-  serviceType: string
-  status: string
-  priority: string
-  requestedDate: Date
-  budget?: number
-  auditReport?: AuditReport
-  findings: AuditFinding[]
-}
-
-export interface AuditReport {
-  id: string
-  executiveSummary?: string
-  overallScore?: number
-  riskLevel?: string
-}
-
-export interface AuditFinding {
-  id: string
-  title: string
-  description: string
-  severity: string
-  category: string
-  recommendation?: string
-  status: string
-}
-
-// NEW: Due Diligence types
+// Due Diligence types
 export interface DueDiligenceRequest {
   id: string
   userId: string

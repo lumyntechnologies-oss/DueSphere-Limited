@@ -31,8 +31,8 @@ export default function Header() {
           <Link href="/services" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
             Services
           </Link>
-          <Link href="/contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
-            Request Audit
+<Link href="/contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
+            Request Due Diligence
           </Link>
           {isSignedIn && (
             <Link href="/dashboard" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>

@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { useUser } from "@clerk/nextjs"
-import styles from "../new-audit/new-audit.module.css" // Reuse audit form styles
+import styles from "./new-due-diligence.module.css"
 
 export default function NewDueDiligencePage() {
   const router = useRouter()

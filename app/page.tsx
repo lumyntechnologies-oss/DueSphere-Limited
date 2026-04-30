@@ -82,7 +82,7 @@ export default function HomePage() {
         <div className={styles.heroImageWrapper}>
           <Image
             src="/image1.png"
-            alt="DueSphere Audit Platform"
+            alt="DueSphere Due Diligence Platform"
             fill
             className={styles.heroImage}
             priority
@@ -92,13 +92,13 @@ export default function HomePage() {
         <div className={styles.heroContent}>
           <span className={styles.heroTag}>Trusted by Industry Leaders</span>
           <h1 className={styles.heroTitle}>DueSphere</h1>
-          <p className={styles.heroSubtitle}>Watchlist Screening, Sanctions & Compliance Services</p>
+          <p className={styles.heroSubtitle}>Background Checks, Sanctions Screening & Due Diligence</p>
           <p className={styles.heroDescription}>
-            Comprehensive security, compliance, and performance audits designed to strengthen your systems and protect your organization.
+            Comprehensive due diligence and background verification services designed to protect your organization and enable confident decisions.
           </p>
           <div className={styles.heroActions}>
             <Link href="/contact" className={styles.primaryBtn}>
-              Request an Audit
+              Request Due Diligence
             </Link>
             <Link href="/services" className={styles.secondaryBtn}>
               Explore Services
@@ -131,7 +131,7 @@ export default function HomePage() {
             <div className={styles.aboutImageWrapper}>
               <Image
                 src="/image2.png"
-                alt="Our audit team at work"
+                alt="Our due diligence team at work"
                 width={560}
                 height={400}
                 className={styles.aboutImage}
@@ -141,20 +141,20 @@ export default function HomePage() {
               <span className={styles.sectionTag}>Who We Are</span>
               <h2 className={styles.sectionTitle}>Trust Through Transparency</h2>
               <p className={styles.aboutText}>
-                DueSphere delivers comprehensive audits that identify vulnerabilities, ensure compliance, and drive organizational excellence. Our expert team provides actionable insights backed by thorough analysis and professional reporting.
+                DueSphere delivers comprehensive due diligence that identifies risks, ensures compliance, and drives organizational excellence. Our expert team provides actionable insights backed by thorough analysis and professional reporting.
               </p>
               <ul className={styles.featureList}>
                 <li className={styles.featureItem}>
                   <span className={styles.featureIcon}>✓</span>
-                  <span>ISO 27001 & SOC 2 Certified Auditors</span>
+                  <span>Verified Background Check Experts</span>
                 </li>
                 <li className={styles.featureItem}>
                   <span className={styles.featureIcon}>✓</span>
-                  <span>Real-time Reporting Dashboard</span>
+                  <span>Real-time Verification Dashboard</span>
                 </li>
                 <li className={styles.featureItem}>
                   <span className={styles.featureIcon}>✓</span>
-                  <span>24/7 Security Monitoring</span>
+                  <span>24/7 Screening & Monitoring</span>
                 </li>
               </ul>
               <Link href="/about" className={styles.learnMoreLink}>
@@ -170,9 +170,9 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.sectionHeaderCenter}>
             <span className={styles.sectionTag}>What We Offer</span>
-            <h2 className={styles.sectionTitle}>Our Audit Services</h2>
+            <h2 className={styles.sectionTitle}>Due Diligence Services</h2>
             <p className={styles.sectionSubtitle}>
-              Comprehensive audit solutions for every aspect of your organization's security and compliance needs.
+              Comprehensive due diligence solutions for every aspect of your organization's risk management needs.
             </p>
           </div>
           {servicesLoading ? (
@@ -219,7 +219,7 @@ export default function HomePage() {
               <p className={styles.dueDescription}>
                Verify legal standing, ownership, and compliance for mergers, acquisitions, or partnerships. Includes KRA, Business Permit, CR12 verification.
               </p>
-              <Link href="/contact?type=dd-org" className={styles.dueLink}>Request Organization DD →</Link>
+              <Link href="/contact?type=organization" className={styles.dueLink}>Request Organization DD →</Link>
             </div>
             <div className={styles.dueCard}>
               <div className={styles.dueIcon}>👤</div>
@@ -227,7 +227,7 @@ export default function HomePage() {
               <p className={styles.dueDescription}>
                 Pre-employment screening for executives and key personnel. Identity, education, employment history, sanctions & PEP screening.
               </p>
-              <Link href="/contact?type=dd-hire" className={styles.dueLink}>Request Background Check →</Link>
+              <Link href="/contact?type=new-hire" className={styles.dueLink}>Request Background Check →</Link>
             </div>
             <div className={styles.dueCard}>
               <div className={styles.dueIcon}>🔗</div>
@@ -235,7 +235,7 @@ export default function HomePage() {
               <p className={styles.dueDescription}>
                 Assess vendor risk, financial stability, compliance posture, and supply chain integrity before engagement.
               </p>
-              <Link href="/contact?type=dd-vendor" className={styles.dueLink}>Request Vendor DD →</Link>
+              <Link href="/contact?type=vendor" className={styles.dueLink}>Request Vendor DD →</Link>
             </div>
           </div>
           <div style={{ textAlign: 'center', marginTop: '32px' }}>
@@ -258,7 +258,7 @@ export default function HomePage() {
               </div>
               <h3 className={styles.whyCardTitle}>Data-Driven Analysis</h3>
               <p className={styles.whyCardText}>
-                We use advanced tools and methodologies to provide comprehensive, quantifiable insights into your organization's security and compliance posture.
+                We use advanced tools and methodologies to provide comprehensive, quantifiable insights into your organization's risk and compliance posture.
               </p>
             </div>
 
@@ -266,7 +266,7 @@ export default function HomePage() {
               <div className={styles.whyIcon}>👥</div>
               <h3 className={styles.whyCardTitle}>Expert Team</h3>
               <p className={styles.whyCardText}>
-                Our certified auditors bring decades of combined experience across multiple industries and compliance frameworks.
+                Our certified investigators bring decades of combined experience across multiple industries and compliance frameworks.
               </p>
             </div>
 
@@ -288,7 +288,7 @@ export default function HomePage() {
             <span className={styles.sectionTag}>Stay Informed</span>
             <h2 className={styles.sectionTitle}>Latest Service Updates</h2>
             <p className={styles.sectionSubtitle}>
-              Get the latest news about our audit services, compliance insights, and industry updates.
+              Get the latest news about our due diligence services, compliance insights, and industry updates.
             </p>
           </div>
 
@@ -347,16 +347,15 @@ export default function HomePage() {
         <div className={styles.ctaOverlay}></div>
         <div className={`${styles.container} ${styles.ctaContainer}`}>
           <span className={styles.ctaTag}>Ready to Get Started?</span>
-          <h2 className={styles.ctaTitle}>Secure Your Organization Today</h2>
+          <h2 className={styles.ctaTitle}>Verify Before You Engage</h2>
           <p className={styles.ctaText}>
-            Let our experts conduct a comprehensive audit of your systems. Identify vulnerabilities, ensure compliance, and achieve peace of mind.
+            Let our experts conduct comprehensive due diligence on your next partner, hire, or acquisition. Make informed decisions with confidence.
           </p>
           <Link href="/contact" className={styles.ctaButton}>
-            Request Your Audit
+            Request Due Diligence
           </Link>
         </div>
       </section>
     </div>
   )
 }
-

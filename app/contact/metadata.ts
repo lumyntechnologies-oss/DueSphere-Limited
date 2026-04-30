@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Request an Audit | DueSphere Professional Services",
-  description: "Request a comprehensive security, compliance, or performance audit from DueSphere. Get started with your audit today and strengthen your organization.",
-  keywords: ["audit request", "security audit", "compliance audit", "performance audit", "code quality audit", "ISO 27001", "SOC 2", "GDPR", "HIPAA", "DueSphere"],
+  title: "Request Due Diligence | DueSphere Professional Services",
+  description: "Request comprehensive due diligence services including organization verification and background checks. Get started today and make informed decisions with confidence.",
+  keywords: ["due diligence request", "organization due diligence", "background check", "KRA verification", "CR12 certificate", "business permit verification", "director background check", "PEP screening", "DueSphere"],
   authors: [{ name: "DueSphere Team" }],
   openGraph: {
-    title: "Request an Audit | DueSphere Professional Services",
-    description: "Request a comprehensive security, compliance, or performance audit from DueSphere. Get started with your audit today.",
+    title: "Request Due Diligence | DueSphere Professional Services",
+    description: "Request comprehensive due diligence services. Get started today and make informed decisions with confidence.",
     url: "https://www.duespherelimited.co.ke/contact",
     siteName: "DueSphere",
     locale: "en_KE",
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "DueSphere Audit Request"
+        alt: "DueSphere Due Diligence Request"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Request an Audit | DueSphere Professional Services",
-    description: "Request a comprehensive security, compliance, or performance audit from DueSphere.",
+    title: "Request Due Diligence | DueSphere Professional Services",
+    description: "Request comprehensive due diligence services. Get started today and make informed decisions.",
     images: ["/og-image.jpg"],
   },
   alternates: {

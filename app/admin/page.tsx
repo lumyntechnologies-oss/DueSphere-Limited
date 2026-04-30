@@ -11,10 +11,9 @@ import MembersManager from "./components/members-manager"
 import ContactsManager from "./components/contacts-manager"
 import LeadershipManager from "./components/leadership-manager"
 import ServiceManager from "./components/service-manager"
-import AuditsManager from "./components/audits-manager"
 import DueDiligenceManager from "./components/due-diligence-manager"
 
-type Tab = "news" | "blog" | "events" | "gallery" | "members" | "contacts" | "leadership" | "services" | "audits" | "due-diligence"
+type Tab = "news" | "blog" | "events" | "gallery" | "members" | "contacts" | "leadership" | "services" | "due-diligence"
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState<Tab>("news")
@@ -96,7 +95,7 @@ export default function AdminPage() {
           >
             Leadership
           </button>
-          <button
+<button
             type="button"
             className={`${styles.navBtn} ${activeTab === "contacts" ? styles.navBtnActive : ""}`}
             onClick={() => setActiveTab("contacts")}
@@ -109,13 +108,6 @@ export default function AdminPage() {
             onClick={() => setActiveTab("services")}
           >
             Services
-          </button>
-          <button
-            type="button"
-            className={`${styles.navBtn} ${activeTab === "audits" ? styles.navBtnActive : ""}`}
-            onClick={() => setActiveTab("audits")}
-          >
-            Audit Requests
           </button>
           <button
             type="button"
@@ -178,12 +170,11 @@ export default function AdminPage() {
         {activeTab === "news" && <NewsManager />}
         {activeTab === "blog" && <BlogManager />}
         {activeTab === "events" && <EventsManager />}
-        {activeTab === "gallery" && <GalleryManager />}
+{activeTab === "gallery" && <GalleryManager />}
         {activeTab === "members" && <MembersManager />}
         {activeTab === "leadership" && <LeadershipManager />}
         {activeTab === "contacts" && <ContactsManager />}
         {activeTab === "services" && <ServiceManager />}
-        {activeTab === "audits" && <AuditsManager />}
         {activeTab === "due-diligence" && <DueDiligenceManager />}
       </div>
     </div>
